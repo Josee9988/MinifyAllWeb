@@ -1,1 +1,9 @@
-<p>home-component works!</p>
+<h4 class="text-center">MinifyAll online</h4>
+<mat-form-field>
+  <mat-label>Language mode</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let language of languages" [value]="language.value">
+      {{language.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
