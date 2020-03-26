@@ -1,9 +1,28 @@
 <h4 class="text-center">MinifyAll online</h4>
-<mat-form-field>
+
+<mat-form-field class="col-md-12">
   <mat-label>Language mode</mat-label>
-  <mat-select>
+  <mat-select [(value)]="languageSelected">
     <mat-option *ngFor="let language of languages" [value]="language.value">
       {{language.viewValue}}
     </mat-option>
   </mat-select>
 </mat-form-field>
+
+<div class="row">
+  <mat-form-field class="col-md-6" appearance="fill">
+    <mat-label>Textarea</mat-label>
+    <label class="full-width">
+      <textarea class="full-width" matInput></textarea>
+    </label>
+  </mat-form-field>
+
+  <mat-form-field class="col-md-6" appearance="fill">
+    <mat-label>Textarea</mat-label>
+    <label class="full-width">
+      <textarea readonly class="full-width" matInput></textarea>
+    </label>
+  </mat-form-field>
+</div>
+
+<button class="full-width" mat-raised-button color="primary" (click)="onSubmit()">Minify text</button>
