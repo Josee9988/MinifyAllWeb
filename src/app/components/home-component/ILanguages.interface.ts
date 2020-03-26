@@ -10,4 +10,8 @@ export interface ILanguagesInterface {
    * The 'label' of text that will be displayed as a select option.
    */
   viewValue: string;
+  /**
+   * The class of the FontAwesome icon related.
+   */
+  faIcon: string;
 }

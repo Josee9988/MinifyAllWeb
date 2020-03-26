@@ -1,10 +1,14 @@
 <h2 class="text-center">MinifyAll online</h2>
+<h4 class="text-center">MinifyAll is a tool that will minify your code to make it lighter <i
+  class="fas fa-feather-alt"></i></h4>
+<hr>
 
 <mat-form-field class="col-md-12">
   <mat-label>Language mode</mat-label>
-  <mat-select class="text-center" matTooltip="Select the language in which your code will be minified" [(value)]="languageSelected">
+  <mat-select class="text-center" matTooltip="Select the language in which your code will be minified"
+              [(value)]="languageSelected">
     <mat-option *ngFor="let language of languages" [value]="language.value">
-      {{language.viewValue}}
+      <i class="{{language.faIcon}}"></i> {{language.viewValue}}
     </mat-option>
   </mat-select>
 </mat-form-field>
@@ -28,10 +32,13 @@
                   placeholder="Your minified code (readonly field)"></textarea>
       </label>
     </mat-form-field>
-    <button class="full-width" mat-stroked-button color="accent" [disabled]="minifiedCode===''"
-            matTooltip="Copy your minified code to your clipboard" (click)="onCopyUrl()">Copy text
+    <button class="full-width hvr-pop" mat-stroked-button color="accent" [disabled]="minifiedCode===''"
+            matTooltip="Copy your minified code to your clipboard" (click)="onCopyUrl()">
+      <i class="fas fa-copy"></i> Copy text
     </button>
   </div>
 </div>
-
-<button class="full-width" mat-raised-button color="primary" (click)="onSubmit()" matTooltip="Minify your code">Minify text</button>
+<br>
+<button class="full-width hvr-hang" mat-raised-button color="primary" (click)="onSubmit()"
+        matTooltip="Minify your code"><i class="fas fa-compress-alt"></i> Minify text
+</button>

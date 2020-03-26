@@ -16,10 +16,10 @@ export class HomeComponentComponent extends Forms implements OnInit {
   minifiedCode = '';
   nonMinifiedCode: FormControl;
   languages: ILanguagesInterface[] = [
-    {value: 0, viewValue: 'Auto detect'},
-    {value: 1, viewValue: 'CSS'},
-    {value: 2, viewValue: 'HTML'},
-    {value: 3, viewValue: 'JSON'},
+    {value: 0, viewValue: 'Auto detect', faIcon: 'fas fa-magic'},
+    {value: 1, viewValue: 'CSS', faIcon: 'fab fa-css3-alt'},
+    {value: 2, viewValue: 'HTML', faIcon: 'fab fa-html5'},
+    {value: 3, viewValue: 'JSON', faIcon: 'fas fa-code'},
   ];
 
   constructor(private snackbarDisplayerService: SnackbarDisplayerService, private copyClipboardService: CopyClipboardService) {
