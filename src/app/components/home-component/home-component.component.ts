@@ -41,12 +41,10 @@ export class HomeComponentComponent extends Forms implements OnInit {
   /**
    * Summary: receives a string to be copied and copies it to the clipboard. If it can't be copied
    * it will notify the user.
-   *
-   * @param code the url to be copied.
    */
-  copyUrl(code: string) {
+  onCopyUrl() {
     const selectedLanguageLabel = this.languages.find((language) => language.value === this.languageSelected).viewValue;
-    if (this.copyClipboardService.copyToClipboard(code, selectedLanguageLabel)) {
+    if (this.copyClipboardService.copyToClipboard(this.minifiedCode, selectedLanguageLabel)) {
       this.snackbarDisplayerService.openSnackBar('Code copied to the clipboard', SnackbarTypeEnum.success);
     } else {
       this.snackbarDisplayerService.openSnackBar(

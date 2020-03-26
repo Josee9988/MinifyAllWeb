@@ -1,8 +1,8 @@
-<h4 class="text-center">MinifyAll online</h4>
+<h2 class="text-center">MinifyAll online</h2>
 
 <mat-form-field class="col-md-12">
   <mat-label>Language mode</mat-label>
-  <mat-select [(value)]="languageSelected">
+  <mat-select class="text-center" matTooltip="Select the language in which your code will be minified" [(value)]="languageSelected">
     <mat-option *ngFor="let language of languages" [value]="language.value">
       {{language.viewValue}}
     </mat-option>
@@ -10,19 +10,28 @@
 </mat-form-field>
 
 <div class="row">
-  <mat-form-field class="col-md-6" appearance="fill">
-    <mat-label>Textarea</mat-label>
-    <label class="full-width">
-      <textarea [formControl]="nonMinifiedCode" class="full-width" matInput placeholder="Your code to be minified"></textarea>
-    </label>
-  </mat-form-field>
+  <div class="col-md-6">
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Code to be minified</mat-label>
+      <label class="full-width">
+        <textarea [formControl]="nonMinifiedCode" class="full-width" matInput
+                  placeholder="Your code to be minified"></textarea>
+      </label>
+    </mat-form-field>
+  </div>
 
-  <mat-form-field class="col-md-6" appearance="fill">
-    <mat-label>Textarea</mat-label>
-    <label class="full-width">
-      <textarea [(ngModel)]="minifiedCode" [ngModelOptions]="{standalone: true}" readonly class="full-width" matInput placeholder="Your minified code (readonly field)"></textarea>
-    </label>
-  </mat-form-field>
+  <div class="col-md-6">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Output code</mat-label>
+      <label class="full-width">
+        <textarea [(ngModel)]="minifiedCode" [ngModelOptions]="{standalone: true}" readonly class="full-width" matInput
+                  placeholder="Your minified code (readonly field)"></textarea>
+      </label>
+    </mat-form-field>
+    <button class="full-width" mat-stroked-button color="accent" [disabled]="minifiedCode===''"
+            matTooltip="Copy your minified code to your clipboard" (click)="onCopyUrl()">Copy text
+    </button>
+  </div>
 </div>
 
-<button class="full-width" mat-raised-button color="primary" (click)="onSubmit()">Minify text</button>
+<button class="full-width" mat-raised-button color="primary" (click)="onSubmit()" matTooltip="Minify your code">Minify text</button>
