@@ -4,7 +4,7 @@
  */
 export interface INavbarLinks {
   /**
-   * Name of the icon of the material icons of google.
+   * Name of the icon of font awesome icons.
    */
   icon: string;
   /**
@@ -15,7 +15,6 @@ export interface INavbarLinks {
    * Name of the route that references.
    */
   route: string;
-
   /**
    * Order in which the must appear (1 = first and so on0.)
    */

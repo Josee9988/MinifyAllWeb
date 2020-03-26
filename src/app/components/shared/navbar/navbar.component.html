@@ -13,8 +13,7 @@
         <!-- Not logout -->
         <a mat-list-item routerLink="/{{ item.route }}" routerLinkActive="active"
            class="hvr-bounce-in">
-          <mat-icon>
-            {{item.icon}}</mat-icon>{{item.field}}
+          <i class="{{item.icon}}"></i> {{item.field}}
         </a>
       </li>
     </mat-nav-list>
@@ -22,7 +21,7 @@
   <mat-sidenav-content>
     <mat-toolbar color="primary">
       <button class="sidenav-btn" type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+       <i aria-label="Side nav toggle icon" class="fas fa-bars"></i>
       </button>
       <span class="minium-header-pads">
         <a routerLink="/home" routerLinkActive="active" class="hvr-pop">
@@ -36,7 +35,7 @@
 
         <button routerLink="/{{ item.route }}" routerLinkActive="active" mat-button
                 class="hvr-bounce-in top-navbar-item">
-          <mat-icon> {{item.icon}} </mat-icon>{{item.field}}
+          <i class="{{item.icon}}"></i> {{item.field}}
         </button>
       </div>
 

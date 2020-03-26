@@ -31,10 +31,10 @@ export class NavbarComponent implements OnInit {
    */
   declareNavbarElements(): void {
     this.navbarLinks = [ // add the missing ones in the right order
-      {icon: 'home', field: 'Minify', route: 'home', order: 1},
-      {icon: 'person_pin', field: 'GitHub repo', route: 'verComerciales', order: 2},
-      {icon: 'list_alt', field: 'Information', route: '', order: 3},
-      {icon: 'shop', field: 'About', route: 'verPedidos', order: 4}
+      {icon: 'fas fa-compress-alt', field: 'Minify code', route: 'home', order: 1},
+      {icon: 'fab fa-github', field: 'GitHub repo', route: 'github', order: 2},
+      {icon: 'fas fa-info-circle', field: 'Information', route: '', order: 3},
+      {icon: 'fas fa-atlas', field: 'About us', route: 'about', order: 4}
       ];
   }
 }
