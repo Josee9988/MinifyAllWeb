@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {INavbarLinks} from './INavbarLinks.interface';
+import {map, shareReplay} from 'rxjs/operators';
+import {BreakpointObserver} from '@angular/cdk/layout';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +10,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  navbarLinks: Array<INavbarLinks>;
+  appName: string;
 
-  constructor() { }
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(
+    '(max-width: 859.99px) and (orientation: portrait), ' +
+    '(max-width: 959.99px) and (orientation: landscape)')
+    .pipe(map(result => result.matches), shareReplay());
 
-  ngOnInit() {
+  constructor(private breakpointObserver: BreakpointObserver) {
   }
 
+  ngOnInit() {
+    this.appName = 'MinifyAll';
+    this.declareNavbarElements();
+  }
+
+  /**
+   * Summary: creates the navbarlinks to be shown at the navbar.
+   */
+  declareNavbarElements(): void {
+    this.navbarLinks = [ // add the missing ones in the right order
+      {icon: 'home', field: 'Minify', route: 'home', order: 1},
+      {icon: 'person_pin', field: 'GitHub repo', route: 'verComerciales', order: 2},
+      {icon: 'list_alt', field: 'Information', route: '', order: 3},
+      {icon: 'shop', field: 'About', route: 'verPedidos', order: 4}
+      ];
+  }
 }

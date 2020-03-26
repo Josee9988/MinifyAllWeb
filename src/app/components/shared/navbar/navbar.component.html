@@ -1,0 +1,55 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav [ngClass]="{hidden: !(isHandset$ | async) === true}" #drawer class="sidenav" color="primary"
+               fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false" (click)="drawer.toggle()">
+    <mat-toolbar class="hvr-hang">
+      <img class="logo-header" routerLink="/home" routerLinkActive="active"
+           src="../../../../assets/smallIcon.png">{{appName}}
+    </mat-toolbar>
+    <mat-nav-list>
+      <h2 matSubheader>Elementos de navegación</h2>
+      <li *ngFor="let item of navbarLinks">
+
+        <!-- Logout -->
+        <a *ngIf="item.logout" mat-list-item class="hvr-bounce-in">
+          <mat-icon> {{item.icon}}</mat-icon>{{item.field}}
+        </a>
+
+        <!-- Not logout -->
+        <a *ngIf="!item.logout" mat-list-item routerLink="/{{ item.route }}" routerLinkActive="active"
+           class="hvr-bounce-in">
+          <mat-icon>
+            {{item.icon}}</mat-icon>{{item.field}}
+        </a>
+      </li>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button class="sidenav-btn" type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="minium-header-pads">
+        <a routerLink="/home" routerLinkActive="active" class="hvr-pop">
+          <img class="logo-header-white" src="../../../../assets/smallIcon.png"><span
+          class="main-navbar-text">{{appName}}</span>
+        </a>
+      </span>
+
+      <span class="fill-space"></span>
+      <div *ngFor="let item of navbarLinks">
+
+        <button routerLink="/{{ item.route }}" routerLinkActive="active" mat-button
+                class="hvr-bounce-in top-navbar-item">
+          <mat-icon> {{item.icon}} </mat-icon>{{item.field}}
+        </button>
+      </div>
+
+      <div class="hvr-bounce-in top-navbar-item">
+      </div>
+
+    </mat-toolbar>
+    <!-- Content -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

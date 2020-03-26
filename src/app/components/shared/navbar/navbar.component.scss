@@ -1,0 +1,111 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.minium-header-pads {
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-right: 1.5%;
+}
+
+.mat-drawer-content {
+  display: contents;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+.mat-drawer-container {
+  display: contents;
+}
+
+.mat-toolbar.mat-primary {
+  min-height: 38px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.top-navbar-item {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.fill-space {
+  -webkit-box-flex: 1;
+  flex: 1 1 auto;
+}
+
+li {
+  list-style: none;
+  list-style-type: none;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  height: 7% !important;
+}
+
+.main-navbar-text {
+  text-decoration: none;
+  color: #fff;
+}
+
+img {
+  height: 24px;
+  vertical-align: middle;
+  padding-right: 2px;
+}
+
+.logo-header {
+  cursor: pointer;
+}
+.mat-button {
+  padding: 0 6px;
+}
+
+@media (max-width: 768px) {
+  .top-navbar-item {
+    display: none !important;
+  }
+}
+
+@media (max-width: 882px) and (max-width: 991.99px) {
+  .mat-button {
+    padding: 0 3px;
+  }
+}
+
+/* Remain hidden until the screen is smaller than X px */
+@media (min-width: 850px) {
+  .sidenav,
+  .sidenav-btn {
+    display: none !important;
+  }
+  .top-navbar-item {
+    display: inline;
+  }
+}
+
+@media (min-width: 992px) {
+  .top-navbar-item {
+    display: inline;
+    font-size: 14px;
+  }
+  .material-icons {
+    font-size: 18.5px !important;
+    padding-top: 2px;
+    vertical-align: middle;
+  }
+  .mat-button {
+    padding: 0 6px;
+  }
+}
