@@ -31,9 +31,9 @@ export class HomeComponentComponent extends Forms implements OnInit {
     this.inputs = [this.nonMinifiedCode];
   }
 
-  onSubmit() {
+  onSubmit(isSilent = false) {
     if (this.validateInputs()) { // inputs are OK
-    } else { // error while validating
+    } else if (isSilent) { // error while validating
       this.snackbarDisplayerService.openSnackBar('Error while validating fields.', SnackbarTypeEnum.warning);
     }
   }
