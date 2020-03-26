@@ -13,14 +13,14 @@
   <mat-form-field class="col-md-6" appearance="fill">
     <mat-label>Textarea</mat-label>
     <label class="full-width">
-      <textarea class="full-width" matInput></textarea>
+      <textarea [formControl]="nonMinifiedCode" class="full-width" matInput placeholder="Your code to be minified"></textarea>
     </label>
   </mat-form-field>
 
   <mat-form-field class="col-md-6" appearance="fill">
     <mat-label>Textarea</mat-label>
     <label class="full-width">
-      <textarea readonly class="full-width" matInput></textarea>
+      <textarea [(ngModel)]="minifiedCode" [ngModelOptions]="{standalone: true}" readonly class="full-width" matInput placeholder="Your minified code (readonly field)"></textarea>
     </label>
   </mat-form-field>
 </div>

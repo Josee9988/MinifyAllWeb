@@ -13,6 +13,7 @@ import {FormControl, Validators} from '@angular/forms';
 export class HomeComponentComponent extends Forms implements OnInit {
   languageSelected = 0;
   nonMinifiedCode: FormControl;
+  minifiedCode: string;
   languages: ILanguagesInterface[] = [
     {value: 0, viewValue: 'Auto detect'},
     {value: 1, viewValue: 'CSS'},
@@ -25,12 +26,13 @@ export class HomeComponentComponent extends Forms implements OnInit {
   }
 
   ngOnInit() {
-    this.nonMinifiedCode = new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(255)]);
+    this.nonMinifiedCode = new FormControl('', [Validators.required, Validators.minLength(5)]);
+    this.inputs = [this.nonMinifiedCode];
   }
 
   onSubmit() {
     if (this.validateInputs()) { // inputs are OK
-
+      debugger;
     } else { // error while validating
       this.snackbarDisplayerService.openSnackBar('Error while validating fields.', SnackbarTypeEnum.warning);
     }
