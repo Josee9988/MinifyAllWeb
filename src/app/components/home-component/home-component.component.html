@@ -29,7 +29,8 @@
     <mat-form-field class="full-width" appearance="fill">
       <mat-label>Code to be minified</mat-label>
       <label class="full-width">
-        <textarea (paste)="onSubmit(true)" [formControl]="nonMinifiedCode" class="full-width" matInput
+        <textarea (paste)="autoDetectCode($event)" [formControl]="nonMinifiedCode" class="full-width"
+                  matInput
                   placeholder="Your code to be minified"></textarea>
         <mat-error
           *ngIf="nonMinifiedCode.invalid && nonMinifiedCode.touched">{{getErrorMessage(nonMinifiedCode)}}</mat-error>

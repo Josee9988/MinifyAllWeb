@@ -41,7 +41,7 @@ export class HomeComponentComponent extends Forms implements OnInit {
   onSubmit(isSilent = false) {
     if (this.validateInputs()) { // inputs are OK
       if (this.languageSelected === 0) { // AUTO DETECT LANGUAGE
-        this.languageSelected = this.detectLanguage.detectLanguage(this.nonMinifiedCode.value);
+       this.autoDetectCode();
       }
       this.nonMinifiedCode.setValue(this.nonMinifiedCode.value.trim()); // code trimmed
       this.minifyCode(this.nonMinifiedCode.value.split('\n')); // minify the code
@@ -62,8 +62,17 @@ export class HomeComponentComponent extends Forms implements OnInit {
       case LanguagesEnum.JSON: // JSON
         this.minifiedCode = minifier.minifyJsonJsonc(source);
         break;
-      default:
+      default: // ERROR
+        this.snackbarDisplayerService.openSnackBar('Unexpected error while minifying. Please contact us.', SnackbarTypeEnum.error);
         break;
+    }
+  }
+
+  private autoDetectCode($event: any = null): void {
+    if ($event) {
+      this.languageSelected = this.detectLanguage.detectLanguage($event.clipboardData.getData('text'));
+    } else {
+      this.languageSelected = this.detectLanguage.detectLanguage(this.nonMinifiedCode.value);
     }
   }
 
