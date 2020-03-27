@@ -5,7 +5,7 @@
 
 <!-- Select -->
 <div class="row">
-  <mat-form-field class="col-md-8">
+  <mat-form-field class="col-md-9">
     <mat-label>Language mode</mat-label>
     <mat-select class="text-center" matTooltip="Select the language in which your code will be minified"
                 [(value)]="languageSelected">
@@ -15,7 +15,7 @@
     </mat-select>
   </mat-form-field>
 
-  <div class="col-md-4 vertical-aligned">
+  <div class="col-md-3 vertical-aligned">
     <mat-slide-toggle [(ngModel)]="isHexMinifierEnabled" color="warn"
                       matTooltip="If the script should minify hexadecimal values or not (some colors may actually change a bit)">
       <i class="fas fa-palette" [ngClass]="{'pallete-colored': isHexMinifierEnabled}"></i> Minify colors

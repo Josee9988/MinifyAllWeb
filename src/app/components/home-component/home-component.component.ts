@@ -23,7 +23,7 @@ export class HomeComponentComponent extends Forms implements OnInit {
     {value: 0, viewValue: 'Auto detect on paste', faIcon: 'fas fa-magic'},
     {value: 1, viewValue: 'HTML', faIcon: 'fab fa-html5'},
     {value: 2, viewValue: 'CSS', faIcon: 'fab fa-css3-alt'},
-    {value: 3, viewValue: 'JSON', faIcon: 'fas fa-code'},
+    {value: 3, viewValue: 'JSON/JSONC', faIcon: 'fas fa-code'},
   ];
 
   constructor(
@@ -41,15 +41,19 @@ export class HomeComponentComponent extends Forms implements OnInit {
   onSubmit(isSilent = false) {
     if (this.validateInputs()) { // inputs are OK
       if (this.languageSelected === 0) { // AUTO DETECT LANGUAGE
-       this.autoDetectCode();
+        this.autoDetectCode();
       }
-      this.nonMinifiedCode.setValue(this.nonMinifiedCode.value.trim()); // code trimmed
+      this.nonMinifiedCode.setValue(this.nonMinifiedCode.value.trim()); // trim code
       this.minifyCode(this.nonMinifiedCode.value.split('\n')); // minify the code
     } else if (!isSilent) { // error while validating
       this.snackbarDisplayerService.openSnackBar('Error while validating fields.', SnackbarTypeEnum.warning);
     }
   }
 
+  /**
+   * Summary: initialices the Global minifier class and calls the right method.
+   * @param source the given code to be minified as an array of strings (each element in the array refeers to one line)
+   */
   private minifyCode(source: []): void {
     const minifier: GlobalMinifierClass = new GlobalMinifierClass(this.isHexMinifierEnabled);
     switch (this.languageSelected) {
@@ -68,6 +72,10 @@ export class HomeComponentComponent extends Forms implements OnInit {
     }
   }
 
+  /**
+   * Summary: auto detects the language.
+   * @param $event the paste event.
+   */
   private autoDetectCode($event: any = null): void {
     if ($event) {
       this.languageSelected = this.detectLanguage.detectLanguage($event.clipboardData.getData('text'));
