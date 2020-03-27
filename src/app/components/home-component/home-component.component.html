@@ -1,8 +1,9 @@
 <h2 class="text-center">MinifyAll online</h2>
 <h4 class="text-center">MinifyAll is a tool that will minify your code to make it lighter <i
   class="fas fa-feather-alt"></i></h4>
-<hr>
+<br>
 
+<!-- Select -->
 <mat-form-field class="col-md-12">
   <mat-label>Language mode</mat-label>
   <mat-select class="text-center" matTooltip="Select the language in which your code will be minified"
@@ -13,6 +14,7 @@
   </mat-select>
 </mat-form-field>
 
+<!-- Textarea with the code to be minified (nonMinifiedCode) -->
 <div class="row">
   <div class="col-md-6">
     <mat-form-field class="full-width" appearance="fill">
@@ -26,6 +28,7 @@
     </mat-form-field>
   </div>
 
+  <!-- Textarea with the code minified (minifiedCode) -->
   <div class="col-md-6">
     <mat-form-field appearance="fill" class="full-width">
       <mat-label>Output code</mat-label>
@@ -41,6 +44,8 @@
   </div>
 </div>
 <br>
+
+<!-- Submit button -->
 <button class="full-width hvr-hang" mat-raised-button color="primary" (click)="onSubmit()"
         matTooltip="Minify your code"><i class="fas fa-compress-alt"></i> Minify {{getLanguageFromSelected().value !== 0 ? getLanguageFromSelected().viewValue : ''}} code
 </button>
