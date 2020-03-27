@@ -1,10 +1,32 @@
 {
   "name": "minify-all",
+  "description": "Online code minifier for HTML, CSS, JSON and JS",
   "version": "0.0.0",
+  "author": {
+    "name": "Jose Gracia",
+    "email": "jgracia9988@gmail.com"
+  },
+  "maintainers": [
+    {
+      "email": "jgracia9988@gmail.com",
+      "name": "Jose Gracia",
+      "url": "https://www.npmjs.com/~josee9988"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/Josee9988/MinifyAllWeb/issues",
+    "email": "jgracia9988@gmail.com"
+  },
+  "license": "LICENSE",
+  "homepage": "https://github.com/Josee9988/MinifyAllWeb",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Josee9988/MinifyAllWeb.git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --optimization --named-chunks --aot --build-optimizer && echo 'minifyall.jgracia.es' > ./docs/CNAME",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -33,9 +55,10 @@
     "@angular/cli": "~8.3.25",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
-    "@types/node": "~8.9.4",
+    "@babel/compat-data": "^7.8.0",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",

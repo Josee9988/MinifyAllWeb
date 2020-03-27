@@ -106,7 +106,7 @@ export class HomeComponentComponent extends Forms implements OnInit {
   /**
    * Obtains the ILanguagesInterface from the selected language.
    */
-  private getLanguageFromSelected(): ILanguagesInterface {
+  getLanguageFromSelected(): ILanguagesInterface {
     return this.languages.find((language) => language.value === this.languageSelected);
   }
 }
