@@ -7,14 +7,14 @@ import {MarkdownParserService} from '../../shared/services/markdown-parser.servi
   styleUrls: ['./information.component.scss']
 })
 export class InformationComponent implements OnInit {
+  convertedText: string;
 
   constructor(private markdownParserService: MarkdownParserService) {
   }
 
   ngOnInit() {
     this.markdownParserService.getMarkdown().subscribe(Markdown => {
-      this.markdownParserService.markdownToHtml(Markdown);
+      this.convertedText = this.markdownParserService.markdownToHtml(Markdown);
     });
   }
-
 }
