@@ -3,6 +3,7 @@ import {HexMinifier} from './controller/hexMinifier';
 import {CssMinifier} from './langDefaultMinifiers/cssMinifier';
 import {HtmlMinifier} from './langDefaultMinifiers/htmlMinifier';
 import {JsonMinifier} from './langDefaultMinifiers/jsonMinifier';
+import * as Terser from 'terser';
 
 /**
  * GlobalMinifiers contain functions that are used by multiple languages to be minifized.
@@ -24,7 +25,7 @@ export class GlobalMinifierClass {
 
   /**
    * Summary Function that does all the steps to minify all the json code.
-   * @param jsonContent css array to be minified.
+   * @param jsonContent json array to be minified.
    * @return  string with all the code minified.
    */
   public minifyJsonJsonc(jsonContent: string[]): string {
@@ -36,13 +37,27 @@ export class GlobalMinifierClass {
 
   /**
    * Summary Function that does all the steps to minify all the html code.
-   * @param  htmlContent css array to be minified.
+   * @param  htmlContent html array to be minified.
    * @return string with all the code minified.
    */
   public minifyHtml(htmlContent: string[]): string {
     const minifierHtml: HtmlMinifier = new HtmlMinifier(htmlContent);
     minifierHtml.removeMultipleLineComments();
     return minifierHtml.getHtmlMinified();
+  }
+
+  /**
+   * Summary Function that does all the steps to minify all the JS code.
+   * @param  jsContent js array to be minified.
+   * @return string with all the code minified.
+   */
+  public minifyJs(jsContent: string[]): string {
+    const minifierJs: any = Terser.minify(jsContent.join('\n'));
+    if (minifierJs.error === undefined) {
+      return minifierJs.code;
+    } else {
+      return null;
+    }
   }
 
   /**
@@ -90,6 +105,4 @@ export class GlobalMinifierClass {
     removeComments.removeCommentsMain();
     return removeComments.getCommentsRemoved();
   }
-
-
 }

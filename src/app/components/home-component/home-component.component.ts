@@ -25,6 +25,7 @@ export class HomeComponentComponent extends Forms implements OnInit {
     {value: 1, viewValue: 'HTML', faIcon: 'fab fa-html5'},
     {value: 2, viewValue: 'CSS', faIcon: 'fab fa-css3-alt'},
     {value: 3, viewValue: 'JSON/JSONC', faIcon: 'fas fa-code'},
+    {value: 4, viewValue: 'JavaScript (with Terser)', faIcon: 'fab fa-js-square'}
   ];
 
   constructor(
@@ -69,8 +70,17 @@ export class HomeComponentComponent extends Forms implements OnInit {
       case LanguagesEnum.JSON: // JSON
         this.minifiedCode = minifier.minifyJsonJsonc(source);
         break;
+      case LanguagesEnum.JAVASCRIPT: // JAVASCRIPT
+        const jsResult = minifier.minifyJs(source);
+        if (jsResult) { // ok
+          this.minifiedCode = jsResult;
+        } else { // error
+          this.snackbarDisplayerService.openSnackBar('Error in the JavaScript code (Terser error)', SnackbarTypeEnum.error);
+        }
+        break;
       default: // ERROR
-        this.snackbarDisplayerService.openSnackBar('Unexpected error while minifying. Please contact us.', SnackbarTypeEnum.error);
+        this.snackbarDisplayerService.openSnackBar(
+          'Unexpected error while minifying. Please tell us how this happened!', SnackbarTypeEnum.error);
         break;
     }
   }
@@ -81,6 +91,7 @@ export class HomeComponentComponent extends Forms implements OnInit {
    */
   autoDetectCode($event: any = null): void {
     if ($event) {
+      $event.preventDefault();
       this.languageSelected = this.detectLanguage.detectLanguage($event.clipboardData.getData('text'));
       this.nonMinifiedCode.setValue($event.clipboardData.getData('text'));
       this.onSubmit(true);
