@@ -1,18 +1,13 @@
-import {Injectable} from '@angular/core';
 import {CommentRemover} from './controller/commentRemover';
 import {HexMinifier} from './controller/hexMinifier';
 import {CssMinifier} from './langDefaultMinifiers/cssMinifier';
 import {HtmlMinifier} from './langDefaultMinifiers/htmlMinifier';
 import {JsonMinifier} from './langDefaultMinifiers/jsonMinifier';
 
-
-@Injectable({
-  providedIn: 'root'
-})
 /**
  * GlobalMinifiers contain functions that are used by multiple languages to be minifized.
  */
-export class GlobalMinifierService {
+export class GlobalMinifierClass {
   constructor(private willMinifyHex: boolean) { }
 
   /**
