@@ -4,15 +4,24 @@
 <br>
 
 <!-- Select -->
-<mat-form-field class="col-md-12">
-  <mat-label>Language mode</mat-label>
-  <mat-select class="text-center" matTooltip="Select the language in which your code will be minified"
-              [(value)]="languageSelected">
-    <mat-option *ngFor="let language of languages" [value]="language.value">
-      <i class="{{language.faIcon}}"></i> {{language.viewValue}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
+<div class="row">
+  <mat-form-field class="col-md-8">
+    <mat-label>Language mode</mat-label>
+    <mat-select class="text-center" matTooltip="Select the language in which your code will be minified"
+                [(value)]="languageSelected">
+      <mat-option *ngFor="let language of languages" [value]="language.value">
+        <i class="{{language.faIcon}}"></i> {{language.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="col-md-4 vertical-aligned">
+    <mat-slide-toggle [(ngModel)]="isHexMinifierEnabled" color="warn"
+                      matTooltip="If the script should minify hexadecimal values or not (some colors may actually change a bit)">
+      <i class="fas fa-palette" [ngClass]="{'pallete-colored': isHexMinifierEnabled}"></i> Minify colors
+    </mat-slide-toggle>
+  </div>
+</div>
 
 <!-- Textarea with the code to be minified (nonMinifiedCode) -->
 <div class="row">
@@ -20,9 +29,11 @@
     <mat-form-field class="full-width" appearance="fill">
       <mat-label>Code to be minified</mat-label>
       <label class="full-width">
-        <textarea (paste)="onSubmit(true)" [formControl]="nonMinifiedCode" class="full-width" matInput
+        <textarea (paste)="autoDetectCode($event)" [formControl]="nonMinifiedCode" class="full-width"
+                  matInput
                   placeholder="Your code to be minified"></textarea>
-        <mat-error *ngIf="nonMinifiedCode.invalid && nonMinifiedCode.touched">{{getErrorMessage(nonMinifiedCode)}}</mat-error>
+        <mat-error
+          *ngIf="nonMinifiedCode.invalid && nonMinifiedCode.touched">{{getErrorMessage(nonMinifiedCode)}}</mat-error>
         <mat-hint *ngIf="nonMinifiedCode.invalid && nonMinifiedCode.touched">Please paste here your code to be minified.</mat-hint>
       </label>
     </mat-form-field>

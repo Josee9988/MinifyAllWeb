@@ -3,7 +3,7 @@
 }
 
 textarea{
-  height: 45vh
+  height: 40vh;
 }
 
 .row{
@@ -12,4 +12,13 @@ textarea{
 
 mat-option{
   text-align: center;
+}
+
+.vertical-aligned{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.pallete-colored{
+  color:#2da1e6;
 }
