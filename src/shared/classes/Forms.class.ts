@@ -13,8 +13,9 @@ export abstract class Forms {
 
   /**
    * Summary: onSubmit is the function called by the submit button from the view.
+   * @param isSilent if it will show errors or not.
    */
-  abstract onSubmit(): void;
+  abstract onSubmit(isSilent: boolean): void;
 
   /**
    * Summary: checks if the input has any error, and if that is the case it will return a string

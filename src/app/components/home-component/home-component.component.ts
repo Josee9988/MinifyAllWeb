@@ -5,6 +5,7 @@ import {SnackbarDisplayerService} from '../../../shared/services/snackbar-displa
 import {SnackbarTypeEnum} from '../../../shared/enums/Snackbar-type.enum';
 import {FormControl, Validators} from '@angular/forms';
 import {CopyClipboardService} from '../../../shared/services/copy-clipboard.service';
+import {DetectLanguageService} from '../../../shared/services/detect-language.service';
 
 @Component({
   selector: 'app-home-component',
@@ -16,13 +17,16 @@ export class HomeComponentComponent extends Forms implements OnInit {
   minifiedCode = '';
   nonMinifiedCode: FormControl;
   languages: ILanguagesInterface[] = [
-    {value: 0, viewValue: 'Auto detect', faIcon: 'fas fa-magic'},
-    {value: 1, viewValue: 'CSS', faIcon: 'fab fa-css3-alt'},
-    {value: 2, viewValue: 'HTML', faIcon: 'fab fa-html5'},
+    {value: 0, viewValue: 'Auto detect on paste', faIcon: 'fas fa-magic'},
+    {value: 1, viewValue: 'HTML', faIcon: 'fab fa-html5'},
+    {value: 2, viewValue: 'CSS', faIcon: 'fab fa-css3-alt'},
     {value: 3, viewValue: 'JSON', faIcon: 'fas fa-code'},
   ];
 
-  constructor(private snackbarDisplayerService: SnackbarDisplayerService, private copyClipboardService: CopyClipboardService) {
+  constructor(
+    private snackbarDisplayerService: SnackbarDisplayerService,
+    private copyClipboardService: CopyClipboardService,
+    private detectLanguage: DetectLanguageService) {
     super();
   }
 
@@ -33,7 +37,13 @@ export class HomeComponentComponent extends Forms implements OnInit {
 
   onSubmit(isSilent = false) {
     if (this.validateInputs()) { // inputs are OK
-    } else if (isSilent) { // error while validating
+      this.nonMinifiedCode.setValue(this.nonMinifiedCode.value.trim()); // text trimmed
+      if (this.languageSelected === 0) { // AUTO DETECT LANGUAGE
+        this.languageSelected = this.detectLanguage.detectLanguage(this.nonMinifiedCode.value);
+      }
+
+
+    } else if (!isSilent) { // error while validating
       this.snackbarDisplayerService.openSnackBar('Error while validating fields.', SnackbarTypeEnum.warning);
     }
   }

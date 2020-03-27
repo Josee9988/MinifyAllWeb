@@ -5,6 +5,9 @@ import {SnackbarTypeEnum} from '../enums/Snackbar-type.enum';
 @Injectable({
   providedIn: 'root'
 })
+/**
+ * Class that displays a snackbar with a message.
+ */
 export class SnackbarDisplayerService {
 
   constructor(public snackBar: MatSnackBar, private zone: NgZone) {

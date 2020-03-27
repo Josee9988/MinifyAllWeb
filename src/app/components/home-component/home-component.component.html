@@ -18,7 +18,7 @@
     <mat-form-field class="full-width" appearance="fill">
       <mat-label>Code to be minified</mat-label>
       <label class="full-width">
-        <textarea (keyup)="onSubmit(true)" [formControl]="nonMinifiedCode" class="full-width" matInput
+        <textarea (paste)="onSubmit(true)" [formControl]="nonMinifiedCode" class="full-width" matInput
                   placeholder="Your code to be minified"></textarea>
       </label>
     </mat-form-field>
