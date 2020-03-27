@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MarkdownParserService} from '../../shared/services/markdown-parser.service';
 
 @Component({
   selector: 'app-information',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InformationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private markdownParserService: MarkdownParserService) {
+  }
 
   ngOnInit() {
+    this.markdownParserService.getMarkdown().subscribe(Markdown => {
+      this.markdownParserService.markdownToHtml(Markdown);
+    });
   }
 
 }
