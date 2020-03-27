@@ -92,8 +92,6 @@ export class HomeComponentComponent extends Forms implements OnInit {
   autoDetectCode($event: any = null): void {
     if ($event) {
       this.languageSelected = this.detectLanguage.detectLanguage($event.clipboardData.getData('text'));
-      this.nonMinifiedCode.setValue($event.clipboardData.getData('text'));
-      this.onSubmit(true);
     } else {
       this.languageSelected = this.detectLanguage.detectLanguage(this.nonMinifiedCode.value);
     }

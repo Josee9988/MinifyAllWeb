@@ -15,13 +15,15 @@ export class DetectLanguageService {
    */
   detectLanguage(source: string): LanguagesEnum {
     if (source.match(/<([A-Za-z][A-Za-z0-9]*)\b[^>]*>(.*?)<\/\1>/) || source.match(/<(?:br|p)[^>{]*>|<\w+\s*>/gmi)) {
-      return LanguagesEnum.HTML;
+      return LanguagesEnum.HTML; // HTML
+    } else if (source.match(/{?(?<key>.*?):(?<val>["].*["]?|.*?)[,\W]\}/g) ||
+      source.match(/(?:\s*\S+\s*{[^}]*})+/)) {
+      return LanguagesEnum.JSON; // JSON
     } else if (source.match(
-      /((?:^\s*)([\w#.@*,:\-.:>,*\s]+)\s*{(?:[\s]*)((?:[A-Za-z\- \s]+[:]\s*['"0-9\w .,\/()\-!%]+;?)*)*\s*}(?:\s*))/) ||
-    source.match(/(?:\s*\S+\s*{[^}]*})+/)) {
-      return LanguagesEnum.CSS;
+      /((?:^\s*)([\w#.@*,:\-.:>,*\s]+)\s*{(?:[\s]*)((?:[A-Za-z\- \s]+[:]\s*['"0-9\w .,\/()\-!%]+;?)*)*\s*}(?:\s*))/)) {
+      return LanguagesEnum.CSS; // CSS
     } else {
-      return LanguagesEnum.JSON;
+      return LanguagesEnum.JAVASCRIPT; // JAVASCRIPT
     }
   }
 }
