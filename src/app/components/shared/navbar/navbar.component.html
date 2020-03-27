@@ -10,11 +10,17 @@
       <h2 matSubheader>Elementos de navegación</h2>
       <li *ngFor="let item of navbarLinks">
 
-        <!-- Not logout -->
-        <a mat-list-item routerLink="/{{ item.route }}" routerLinkActive="active"
+        <a *ngIf="!item.externalLink" mat-list-item routerLink="/{{ item.route }}" routerLinkActive="active"
            class="hvr-bounce-in">
           <i class="{{item.icon}}"></i> {{item.field}}
         </a>
+
+        <!-- If with external link -->
+        <a *ngIf="item.externalLink" mat-list-item href="{{ item.externalLink }}" routerLinkActive="active"
+           class="hvr-bounce-in">
+          <i class="{{item.icon}}"></i> {{item.field}}
+        </a>
+
       </li>
     </mat-nav-list>
   </mat-sidenav>
@@ -32,11 +38,18 @@
 
       <span class="fill-space"></span>
       <div *ngFor="let item of navbarLinks">
-
-        <button routerLink="/{{ item.route }}" routerLinkActive="active" mat-button
+        <button *ngIf="!item.externalLink" routerLink="/{{ item.route }}" routerLinkActive="active" mat-button
                 class="hvr-bounce-in top-navbar-item">
           <i class="{{item.icon}}"></i> {{item.field}}
         </button>
+
+        <!-- If with external link -->
+        <a class="external-link" href="{{item.externalLink}}">
+        <button *ngIf="item.externalLink" mat-button
+                class="hvr-bounce-in top-navbar-item">
+          <i class="{{item.icon}}"></i> {{item.field}}
+        </button>
+        </a>
       </div>
 
       <div class="hvr-bounce-in top-navbar-item">

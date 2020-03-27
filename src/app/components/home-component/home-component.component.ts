@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {ILanguagesInterface} from './ILanguages.interface';
-import {Forms} from '../../../shared/classes/Forms.class';
-import {SnackbarDisplayerService} from '../../../shared/services/snackbar-displayer.service';
-import {SnackbarTypeEnum} from '../../../shared/enums/Snackbar-type.enum';
+import {Forms} from '../../shared/classes/Forms.class';
+import {SnackbarDisplayerService} from '../../shared/services/snackbar-displayer.service';
+import {SnackbarTypeEnum} from '../../shared/enums/Snackbar-type.enum';
 import {FormControl, Validators} from '@angular/forms';
-import {CopyClipboardService} from '../../../shared/services/copy-clipboard.service';
-import {DetectLanguageService} from '../../../shared/services/detect-language.service';
-import {LanguagesEnum} from '../../../shared/enums/Languages.enum';
-import {GlobalMinifierClass} from '../../../shared/services/global-minifier.class';
+import {CopyClipboardService} from '../../shared/services/copy-clipboard.service';
+import {DetectLanguageService} from '../../shared/services/detect-language.service';
+import {LanguagesEnum} from '../../shared/enums/Languages.enum';
+import {GlobalMinifierClass} from '../../shared/services/global-minifier.class';
 
 @Component({
   selector: 'app-home-component',

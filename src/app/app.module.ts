@@ -20,7 +20,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {SnackbarDisplayerService} from '../shared/services/snackbar-displayer.service';
+import {SnackbarDisplayerService} from './shared/services/snackbar-displayer.service';
 
 
 @NgModule({
