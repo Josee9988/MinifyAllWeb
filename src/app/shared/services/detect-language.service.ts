@@ -52,6 +52,6 @@ export class DetectLanguageService {
 
   private displayNotSureMessage(): void {
     this.snackbarDisplayerService.openSnackBar(
-      'We are not fully sure about the language, please review it manually', SnackbarTypeEnum.warning);
+      'We are not 100% sure about the language, please review it manually', SnackbarTypeEnum.warning);
   }
 }
