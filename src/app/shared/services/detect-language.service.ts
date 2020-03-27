@@ -14,10 +14,11 @@ export class DetectLanguageService {
    * @param source the programming code to analyze.
    */
   detectLanguage(source: string): LanguagesEnum {
-    if (source.match(/<([A-Za-z][A-Za-z0-9]*)\b[^>]*>(.*?)<\/\1>/)) {
+    if (source.match(/<([A-Za-z][A-Za-z0-9]*)\b[^>]*>(.*?)<\/\1>/) || source.match(/<(?:br|p)[^>{]*>|<\w+\s*>/gmi)) {
       return LanguagesEnum.HTML;
     } else if (source.match(
-      /((?:^\s*)([\w#.@*,:\-.:>,*\s]+)\s*{(?:[\s]*)((?:[A-Za-z\- \s]+[:]\s*['"0-9\w .,\/()\-!%]+;?)*)*\s*}(?:\s*))/)) {
+      /((?:^\s*)([\w#.@*,:\-.:>,*\s]+)\s*{(?:[\s]*)((?:[A-Za-z\- \s]+[:]\s*['"0-9\w .,\/()\-!%]+;?)*)*\s*}(?:\s*))/) ||
+    source.match(/(?:\s*\S+\s*{[^}]*})+/)) {
       return LanguagesEnum.CSS;
     } else {
       return LanguagesEnum.JSON;

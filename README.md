@@ -1,27 +1,55 @@
-# MinifyAll
+# **MinifyAll online**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.25.
+Check the **[webpage now](https://minifyall.jgracia.es/)**  <!-- TODO: GET THE LINK -->
 
-## Development server
+An online tool to **minify** your web **code**.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Check the **original** VSCode extension **[MinifyAll](https://github.com/Josee9988/MinifyAll)**
 
-## Code scaffolding
+Do you want to improve the project or did you find a bug? **[let us know](https://github.com/Josee9988/MinifyAllWeb/issues)** or contact the creator via **[e-mail](jgracia9988@gmail.com)**.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## **Languages available** 🧪🔥
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- **HTML**
+- **CSS**
+- **JSON**
+- (Upcoming feature) JavaScript with [Terser](https://github.com/terser/terser)
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## **Installation/Contributing**
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+To use, test, improve or develop this project, you must:
 
-## Further help
+1. Clone this repository: `https://github.com/Josee9988/MinifyAllWeb.git`
+2. Install the dependencies: `npm install`
+3. Run the development server: `ng serve -o` or `npm run start`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+---
+
+## **Built with**
+
+- [WebStorm](https://www.jetbrains.com/webstorm/)
+* [Github](https://github.com/Josee9988) (also as a web host)
+* [Angular CLI](https://github.com/angular/angular-cli) version 8.3.25.
+* [Angular material](https://material.angular.io/)
+* [Bootstrap 4.4](https://getbootstrap.com/)
+
+---
+
+### Did you enjoyed the minifier? Help us raise these numbers up 🥰 🎉
+
+[![Github followers](https://img.shields.io/github/followers/Josee9988.svg?style=social)](#did-you-enjoyed-the-minifier-help-us-raise-these-numbers-up--)
+[![Github stars](https://img.shields.io/github/stars/Josee9988/MinifyAllWeb.svg?style=social)](#did-you-enjoyed-the-minifier-help-us-raise-these-numbers-up--)
+[![Github watchers](https://img.shields.io/github/watchers/Josee9988/MinifyAllWeb.svg?style=social)](#did-you-enjoyed-the-minifier-help-us-raise-these-numbers-up--)
+[![Github forks](https://img.shields.io/github/forks/Josee9988/MinifyAllWeb.svg?style=social)](#did-you-enjoyed-the-minifier-help-us-raise-these-numbers-up--)
+
+[Check the original MinifyAll VSCode extension](https://github.com/Josee9988/MinifyAll) 🧲
+---
+
+> ⚠️Remember that this tool does not guarantee a 100% effectiveness and may have some issue at some point. Use it at your own risk and always do backups of your code.⚠️
+
+*Made with a lot of ❤️❤️ by **[@Josee9988](https://github.com/Josee9988)***
