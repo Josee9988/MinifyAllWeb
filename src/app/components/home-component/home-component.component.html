@@ -7,7 +7,7 @@
 <div class="row">
   <mat-form-field class="col-md-9">
     <mat-label>Language mode</mat-label>
-    <mat-select class="text-center" matTooltip="Select the language in which your code will be minified"
+    <mat-select (valueChange)="onSubmit(true)" class="text-center" matTooltip="Select the language in which your code will be minified"
                 [(value)]="languageSelected">
       <mat-option *ngFor="let language of languages" [value]="language.value">
         <i class="{{language.faIcon}}"></i> {{language.viewValue}}
