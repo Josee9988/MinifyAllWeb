@@ -32,8 +32,8 @@ export class NavbarComponent implements OnInit {
   declareNavbarElements(): void {
     this.navbarLinks = [ // add the missing ones in the right order
       {icon: 'fas fa-compress-alt', field: 'Minify code', route: 'home', order: 1},
-      {icon: 'fab fa-github', field: 'GitHub repo', route: 'github', order: 2, externalLink: 'https://github.com/Josee9988/MinifyAllWeb'},
-      {icon: 'fas fa-info-circle', field: 'Information', route: '', order: 3},
+      {icon: 'fab fa-github', field: 'GitHub repo', route: '', order: 2, externalLink: 'https://github.com/Josee9988/MinifyAllWeb'},
+      {icon: 'fas fa-info-circle', field: 'Information', route: 'info', order: 3},
       {icon: 'fas fa-atlas', field: 'About us', route: 'about', order: 4}
       ];
   }
