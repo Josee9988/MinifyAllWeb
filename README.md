@@ -1,12 +1,14 @@
 # **MinifyAll online**
 
-Check the **[webpage now](https://minifyall.jgracia.es/)**  <!-- TODO: GET THE LINK -->
+Check the **[webpage now](https://minifyall.jgracia.es/)**
 
 An online tool to **minify** your web **code**.
 
 Check the **original** VSCode extension **[MinifyAll](https://github.com/Josee9988/MinifyAll)**
 
 Do you want to improve the project or did you find a bug? **[let us know](https://github.com/Josee9988/MinifyAllWeb/issues)** or contact the creator via **[e-mail](jgracia9988@gmail.com)**.
+
+> We support up to **4** languages!
 
 ---
 
@@ -15,8 +17,7 @@ Do you want to improve the project or did you find a bug? **[let us know](https:
 - **HTML**
 - **CSS**
 - **JSON**
-- (Upcoming feature) JavaScript with [Terser](https://github.com/terser/terser)
-
+- **JavaScript** with [Terser](https://github.com/terser/terser)
 
 ---
 
