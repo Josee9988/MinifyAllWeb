@@ -17,6 +17,7 @@ import {GlobalMinifierClass} from '../../../shared/services/global-minifier.clas
 export class HomeComponentComponent extends Forms implements OnInit {
   languageSelected = 0;
   minifiedCode = '';
+  isProcessing = false;
   isHexMinifierEnabled: boolean;
   nonMinifiedCode: FormControl;
   languages: ILanguagesInterface[] = [
@@ -40,11 +41,13 @@ export class HomeComponentComponent extends Forms implements OnInit {
 
   onSubmit(isSilent = false) {
     if (this.validateInputs()) { // inputs are OK
+      this.isProcessing = true;
       if (this.languageSelected === 0) { // AUTO DETECT LANGUAGE
         this.autoDetectCode();
       }
       this.nonMinifiedCode.setValue(this.nonMinifiedCode.value.trim()); // trim code
       this.minifyCode(this.nonMinifiedCode.value.split('\n')); // minify the code
+      this.isProcessing = false;
     } else if (!isSilent) { // error while validating
       this.snackbarDisplayerService.openSnackBar('Error while validating fields.', SnackbarTypeEnum.warning);
     }

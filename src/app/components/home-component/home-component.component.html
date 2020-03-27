@@ -57,6 +57,9 @@
 <br>
 
 <!-- Submit button -->
-<button class="full-width hvr-hang" mat-raised-button color="primary" (click)="onSubmit()"
+<div class="full-width hvr-hang">
+<button class="full-width" mat-raised-button color="primary" (click)="onSubmit()"
         matTooltip="Minify your code"><i class="fas fa-compress-alt"></i> Minify {{getLanguageFromSelected().value !== 0 ? getLanguageFromSelected().viewValue : ''}} code
 </button>
+<mat-progress-bar *ngIf="isProcessing" class="full-width" color="warn" mode="query"></mat-progress-bar>
+</div>
