@@ -19,4 +19,8 @@ export interface INavbarLinks {
    * Order in which the must appear (1 = first and so on0.)
    */
   order: number;
+  /**
+   * If the element redirects to an external page instead.
+   */
+  externalLink?: string;
 }

@@ -1,20 +1,26 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav [ngClass]="{hidden: !(isHandset$ | async) === true}" #drawer class="sidenav" color="primary"
+  <mat-sidenav [ngClass]="{hidden: !(isHandset$ | async) === true}" #drawer class="sidenav"
                fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false" (click)="drawer.toggle()">
-    <mat-toolbar class="hvr-hang">
+    <mat-toolbar color="primary" class="hvr-hang">
       <img class="logo-header" routerLink="/home" routerLinkActive="active"
-           src="../../../../assets/smallIcon.png">{{appName}}
+           src="../../../../assets/logo.png" alt="logo">{{appName}}
     </mat-toolbar>
     <mat-nav-list>
       <h2 matSubheader>Elementos de navegación</h2>
       <li *ngFor="let item of navbarLinks">
 
-        <!-- Not logout -->
-        <a mat-list-item routerLink="/{{ item.route }}" routerLinkActive="active"
+        <a *ngIf="!item.externalLink" mat-list-item routerLink="/{{ item.route }}" routerLinkActive="active"
            class="hvr-bounce-in">
           <i class="{{item.icon}}"></i> {{item.field}}
         </a>
+
+        <!-- If with external link -->
+        <a *ngIf="item.externalLink" mat-list-item href="{{ item.externalLink }}" routerLinkActive="active"
+           class="hvr-bounce-in">
+          <i class="{{item.icon}}"></i> {{item.field}}
+        </a>
+
       </li>
     </mat-nav-list>
   </mat-sidenav>
@@ -25,18 +31,25 @@
       </button>
       <span class="minium-header-pads">
         <a routerLink="/home" routerLinkActive="active" class="hvr-pop">
-          <img class="logo-header-white" src="../../../../assets/smallIcon.png"><span
+          <img class="logo-header-white" src="../../../../assets/logo.png" alt="logo"><span
           class="main-navbar-text">{{appName}}</span>
         </a>
       </span>
 
       <span class="fill-space"></span>
       <div *ngFor="let item of navbarLinks">
-
-        <button routerLink="/{{ item.route }}" routerLinkActive="active" mat-button
+        <button *ngIf="!item.externalLink" routerLink="/{{ item.route }}" routerLinkActive="active" mat-button
                 class="hvr-bounce-in top-navbar-item">
           <i class="{{item.icon}}"></i> {{item.field}}
         </button>
+
+        <!-- If with external link -->
+        <a class="external-link" href="{{item.externalLink}}">
+        <button *ngIf="item.externalLink" mat-button
+                class="hvr-bounce-in top-navbar-item">
+          <i class="{{item.icon}}"></i> {{item.field}}
+        </button>
+        </a>
       </div>
 
       <div class="hvr-bounce-in top-navbar-item">

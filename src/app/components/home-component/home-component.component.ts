@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {ILanguagesInterface} from './ILanguages.interface';
-import {Forms} from '../../../shared/classes/Forms.class';
-import {SnackbarDisplayerService} from '../../../shared/services/snackbar-displayer.service';
-import {SnackbarTypeEnum} from '../../../shared/enums/Snackbar-type.enum';
+import {Forms} from '../../shared/classes/Forms.class';
+import {SnackbarDisplayerService} from '../../shared/services/snackbar-displayer.service';
+import {SnackbarTypeEnum} from '../../shared/enums/Snackbar-type.enum';
 import {FormControl, Validators} from '@angular/forms';
-import {CopyClipboardService} from '../../../shared/services/copy-clipboard.service';
-import {DetectLanguageService} from '../../../shared/services/detect-language.service';
-import {LanguagesEnum} from '../../../shared/enums/Languages.enum';
-import {GlobalMinifierClass} from '../../../shared/services/global-minifier.class';
+import {CopyClipboardService} from '../../shared/services/copy-clipboard.service';
+import {DetectLanguageService} from '../../shared/services/detect-language.service';
+import {LanguagesEnum} from '../../shared/enums/Languages.enum';
+import {GlobalMinifierClass} from '../../shared/services/global-minifier.class';
 
 @Component({
   selector: 'app-home-component',
@@ -17,6 +17,7 @@ import {GlobalMinifierClass} from '../../../shared/services/global-minifier.clas
 export class HomeComponentComponent extends Forms implements OnInit {
   languageSelected = 0;
   minifiedCode = '';
+  isProcessing = false;
   isHexMinifierEnabled: boolean;
   nonMinifiedCode: FormControl;
   languages: ILanguagesInterface[] = [
@@ -40,11 +41,13 @@ export class HomeComponentComponent extends Forms implements OnInit {
 
   onSubmit(isSilent = false) {
     if (this.validateInputs()) { // inputs are OK
+      this.isProcessing = true;
       if (this.languageSelected === 0) { // AUTO DETECT LANGUAGE
         this.autoDetectCode();
       }
       this.nonMinifiedCode.setValue(this.nonMinifiedCode.value.trim()); // trim code
       this.minifyCode(this.nonMinifiedCode.value.split('\n')); // minify the code
+      this.isProcessing = false;
     } else if (!isSilent) { // error while validating
       this.snackbarDisplayerService.openSnackBar('Error while validating fields.', SnackbarTypeEnum.warning);
     }

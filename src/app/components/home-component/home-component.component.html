@@ -29,7 +29,7 @@
     <mat-form-field class="full-width" appearance="fill">
       <mat-label>Code to be minified</mat-label>
       <label class="full-width">
-        <textarea (paste)="autoDetectCode($event)" [formControl]="nonMinifiedCode" class="full-width"
+        <textarea (paste)="autoDetectCode($event)" (blur)="onSubmit(true)" [formControl]="nonMinifiedCode" class="full-width"
                   matInput
                   placeholder="Your code to be minified"></textarea>
         <mat-error
@@ -57,6 +57,9 @@
 <br>
 
 <!-- Submit button -->
-<button class="full-width hvr-hang" mat-raised-button color="primary" (click)="onSubmit()"
+<div class="full-width hvr-hang">
+<button class="full-width" mat-raised-button color="primary" (click)="onSubmit()"
         matTooltip="Minify your code"><i class="fas fa-compress-alt"></i> Minify {{getLanguageFromSelected().value !== 0 ? getLanguageFromSelected().viewValue : ''}} code
 </button>
+<mat-progress-bar *ngIf="isProcessing" class="full-width" color="warn" mode="query"></mat-progress-bar>
+</div>
