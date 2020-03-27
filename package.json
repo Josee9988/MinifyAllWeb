@@ -1,10 +1,30 @@
 {
   "name": "minify-all",
+  "description": "Online code minifier for HTML, CSS, JSON and JS",
   "version": "0.0.0",
+  "author": {
+    "name": "Jose Gracia",
+    "email": "jgracia9988@gmail.com"
+  },
+  "maintainers": [{
+    "email": "jgracia9988@gmail.com",
+    "name": "Jose Gracia",
+    "url": "https://www.npmjs.com/~josee9988"
+  }],
+  "bugs": {
+    "url": "https://github.com/Josee9988/MinifyAllWeb/issues",
+    "email": "jgracia9988@gmail.com"
+  },
+  "license": "LICENSE",
+  "homepage": "https://github.com/Josee9988/MinifyAllWeb",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Josee9988/MinifyAllWeb.git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --optimization --named-chunks --aot --build-optimizer --output-path /docs/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
