@@ -9,9 +9,13 @@ export enum LanguagesEnum {
   /**
    * Css language
    */
-  CSS= 2,
+  CSS = 2,
   /**
    * Json language
    */
-  JSON = 3
+  JSON = 3,
+  /**
+   * JavaScript language
+   */
+  JAVASCRIPT = 4
 }
