@@ -23,7 +23,7 @@ export class GlobalMinifierService {
   public minifyCssScssLessSass(cssContent: string[]): string {
     const removeComments: string[] = this.removeComments(cssContent);
     const hexMinifiedCss: string[] = this.HexMinify(removeComments);
-    const minifierCss: cssMinifier = new cssMinifier(hexMinifiedCss);
+    const minifierCss: CssMinifier = new CssMinifier(hexMinifiedCss);
     return minifierCss.getCssMinified();
   }
 
@@ -35,7 +35,7 @@ export class GlobalMinifierService {
   public minifyJsonJsonc(jsonContent: string[]): string {
     const contentWithHexMinified: string[] = this.HexMinify(jsonContent);
     const removeComments: string[] = this.removeComments(contentWithHexMinified);
-    const minifierJson: jsonMinifier = new jsonMinifier(removeComments);
+    const minifierJson: JsonMinifier = new JsonMinifier(removeComments);
     return minifierJson.getJSONMinified();
   }
 
@@ -45,7 +45,7 @@ export class GlobalMinifierService {
    * @return string with all the code minified.
    */
   public minifyHtml(htmlContent: string[]): string {
-    const minifierHtml: htmlMinifier = new htmlMinifier(htmlContent);
+    const minifierHtml: HtmlMinifier = new HtmlMinifier(htmlContent);
     minifierHtml.removeMultipleLineComments();
     return minifierHtml.getHtmlMinified();
   }

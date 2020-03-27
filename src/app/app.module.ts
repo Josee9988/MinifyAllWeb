@@ -5,7 +5,15 @@ import {AppRoutingModule, routingComponents} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatFormFieldModule, MatInputModule, MatListModule, MatOptionModule, MatSelectModule, MatSidenavModule} from '@angular/material';
+import {
+    MatFormFieldModule,
+    MatInputModule,
+    MatListModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSlideToggleModule
+} from '@angular/material';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
@@ -21,24 +29,25 @@ import {SnackbarDisplayerService} from '../shared/services/snackbar-displayer.se
     NavbarComponent,
     routingComponents
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatTooltipModule,
-    MatListModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatFormFieldModule,
-    MatOptionModule,
-    MatSelectModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    FormsModule,
-    MatSnackBarModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatSidenavModule,
+        MatToolbarModule,
+        MatTooltipModule,
+        MatListModule,
+        MatButtonModule,
+        MatButtonToggleModule,
+        MatFormFieldModule,
+        MatOptionModule,
+        MatSelectModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MatSnackBarModule,
+        MatSlideToggleModule,
+    ],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -15,6 +15,7 @@ import {DetectLanguageService} from '../../../shared/services/detect-language.se
 export class HomeComponentComponent extends Forms implements OnInit {
   languageSelected = 0;
   minifiedCode = '';
+  isHexMinifierEnabled: boolean;
   nonMinifiedCode: FormControl;
   languages: ILanguagesInterface[] = [
     {value: 0, viewValue: 'Auto detect on paste', faIcon: 'fas fa-magic'},
