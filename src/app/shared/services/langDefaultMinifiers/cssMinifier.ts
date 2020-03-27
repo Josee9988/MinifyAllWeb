@@ -38,8 +38,6 @@ export class CssMinifier {
    */
   public getCssMinified(): string {
     return this.cssContent.join('').replace(/\s+/g, ' ') // from multiple spaces to one
-      .replace(/\/\*(?:.| )*?(?:(?=(\/\*))|\*\/)/g, '$1').replace(/\/\*(?:.| )*?(?:(?=(\/\*))|\*\/)/g, '$1')
-      .replace(/\/\*(?:.| )*?(?:(?=(\/\*))|\*\/)/g, '$1') // removes nested comments 2 levels deep..
       .replace(/;? }/g, '}') // remove space (and semicolon if present) preceding }
       // removes space before or after these chars
       .replace(/ ?([;{}!,>]) ?| ([)])|([:(]) /g, '$1$2$3')

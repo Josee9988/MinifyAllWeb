@@ -52,7 +52,7 @@ export class GlobalMinifierClass {
    * @return string with all the code minified.
    */
   public minifyJs(jsContent: string[]): string {
-    const minifierJs: any = Terser.minify(jsContent);
+    const minifierJs: any = Terser.minify(jsContent.join('\n'));
     if (minifierJs.error === undefined) {
       return minifierJs.code;
     } else {
