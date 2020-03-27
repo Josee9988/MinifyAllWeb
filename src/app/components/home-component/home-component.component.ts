@@ -54,7 +54,7 @@ export class HomeComponentComponent extends Forms implements OnInit {
   }
 
   /**
-   * Summary: initialices the Global minifier class and calls the right method.
+   * Summary: initialises the Global minifier class and calls the right method.
    * @param source the given code to be minified as an array of strings (each element in the array refeers to one line)
    */
   private minifyCode(source: []): void {
@@ -79,9 +79,11 @@ export class HomeComponentComponent extends Forms implements OnInit {
    * Summary: auto detects the language.
    * @param $event the paste event.
    */
-  private autoDetectCode($event: any = null): void {
+  autoDetectCode($event: any = null): void {
     if ($event) {
       this.languageSelected = this.detectLanguage.detectLanguage($event.clipboardData.getData('text'));
+      this.nonMinifiedCode.setValue($event.clipboardData.getData('text'));
+      this.onSubmit(true);
     } else {
       this.languageSelected = this.detectLanguage.detectLanguage(this.nonMinifiedCode.value);
     }
