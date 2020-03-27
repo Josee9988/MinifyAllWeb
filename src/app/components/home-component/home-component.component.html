@@ -20,6 +20,8 @@
       <label class="full-width">
         <textarea (paste)="onSubmit(true)" [formControl]="nonMinifiedCode" class="full-width" matInput
                   placeholder="Your code to be minified"></textarea>
+        <mat-error *ngIf="nonMinifiedCode.invalid && nonMinifiedCode.touched">{{getErrorMessage(nonMinifiedCode)}}</mat-error>
+        <mat-hint *ngIf="nonMinifiedCode.invalid && nonMinifiedCode.touched">Please paste here your code to be minified.</mat-hint>
       </label>
     </mat-form-field>
   </div>
@@ -40,5 +42,5 @@
 </div>
 <br>
 <button class="full-width hvr-hang" mat-raised-button color="primary" (click)="onSubmit()"
-        matTooltip="Minify your code"><i class="fas fa-compress-alt"></i> Minify text
+        matTooltip="Minify your code"><i class="fas fa-compress-alt"></i> Minify {{getLanguageFromSelected().value !== 0 ? getLanguageFromSelected().viewValue : ''}} code
 </button>

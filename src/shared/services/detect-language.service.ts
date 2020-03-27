@@ -9,9 +9,10 @@ import {LanguagesEnum} from '../enums/Languages.enum';
  */
 export class DetectLanguageService {
 
-  constructor() {
-  }
-
+  /**
+   * Summary: receives a code and guesses the programming language that it is written in.
+   * @param source the programming code to analyze.
+   */
   detectLanguage(source: string): LanguagesEnum {
     if (source.match(/<([A-Za-z][A-Za-z0-9]*)\b[^>]*>(.*?)<\/\1>/)) {
       return LanguagesEnum.HTML;
@@ -22,5 +23,4 @@ export class DetectLanguageService {
       return LanguagesEnum.JSON;
     }
   }
-
 }
