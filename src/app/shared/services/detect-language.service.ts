@@ -24,23 +24,21 @@ export class DetectLanguageService {
       return LanguagesEnum.HTML;
 
       // CSS AND JSON ARE POSITIVE (NOT SURE MESSAGE)
-    } else if (source.match(/[\#\.\w\-\r\t]+(?=\s*\{)/) && (source.match(/{?(?<key>.*?):(?<val>["].*["]?|.*?)[,\W]\}/g) ||
-      source.match(/(?:\s*\S+\s*{[^}]*})+/))) {
+    } else if (source.match(/[#.\w\-\r\t]+(?=\s*{)/) && source.match(/(?:\s*\S+\s*{[^}]*})+/)) {
       this.displayNotSureMessage();
       return LanguagesEnum.CSS;
 
       // CSS CODE
-    } else if (source.match(/[\#\.\w\-\r\t]+(?=\s*\{)/)) {
+    } else if (source.match(/[#.\w\-\r\t]+(?=\s*{)/)) {
       return LanguagesEnum.CSS;
 
       // JSON CODE
-    } else if (source.match(/{?(?<key>.*?):(?<val>["].*["]?|.*?)[,\W]\}/g) ||
-      source.match(/(?:\s*\S+\s*{[^}]*})+/)) {
+    } else if (source.match(/(?:\s*\S+\s*{[^}]*})+/)) {
       return LanguagesEnum.JSON;
 
       // JAVASCRIPT
       // tslint:disable-next-line:max-line-length
-    } else if (source.match(/^(?:[\s]+)?(?:const|let|var|)?(?:[a-z0-9.]+(?:\.prototype)?)?(?:\s)?(?:[a-z0-9-_]+\s?=)?\s?(?:[a-z0-9]+\s+\:\s+)?(?:function\s?)?(?:[a-z0-9_-]+)?\s?\(.*\)\s?(?:.+)?([=>]:)?\{(?:(?:[^}{]+|\{(?:[^}{]+|\{[^}{]*\})*\})*\}(?:\s?\(.*\)\s?\)\s?)?)?(?:\;)?/gmi)) {
+    } else if (source.match(/^(?:[\s]+)?(?:const|let|var|)?(?:[a-z0-9.]+(?:\.prototype)?)?(?:\s)?(?:[a-z0-9-_]+\s?=)?\s?(?:[a-z0-9]+\s+:\s+)?(?:function\s?)?(?:[a-z0-9_-]+)?\s?\(.*\)\s?(?:.+)?([=>]:)?{(?:(?:[^}{]+|{(?:[^}{]+|{[^}{]*})*})*}(?:\s?\(.*\)\s?\)\s?)?)?(?:;)?/gmi)) {
       return LanguagesEnum.JAVASCRIPT;
 
       // ANY OF THE OTHERS MATCHED
