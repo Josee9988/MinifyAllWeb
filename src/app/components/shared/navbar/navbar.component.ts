@@ -33,7 +33,8 @@ export class NavbarComponent implements OnInit {
     this.navbarLinks = [ // add the missing ones in the right order
       {icon: 'fas fa-compress-alt', field: 'Minify code', route: 'home', order: 1},
       {icon: 'fas fa-info-circle', field: 'Information', route: 'info', order: 2},
-      {icon: 'fab fa-github', field: 'GitHub repo', route: '', order: 3, externalLink: 'https://github.com/Josee9988/MinifyAllWeb'},
+      {icon: 'fas fa-clipboard-list', field: 'Changelog', route: 'changelog', order: 3},
+      {icon: 'fab fa-github', field: 'GitHub repo', route: '', order: 4, externalLink: 'https://github.com/Josee9988/MinifyAllWeb'},
       ];
   }
 }

@@ -13,7 +13,7 @@ export class InformationComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.markdownParserService.getMarkdown().subscribe(Markdown => {
+    this.markdownParserService.getReadme().subscribe(Markdown => {
       this.convertedText = this.markdownParserService.markdownToHtml(Markdown);
     });
   }

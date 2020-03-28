@@ -16,11 +16,20 @@ export class MarkdownParserService {
   }
 
   /**
-   * Summary: we obtain the markdown of the project README.md.
+   * Summary: we obtain the readme of the project README.md.
    */
-  getMarkdown(): Observable<string> {
+  getReadme(): Observable<string> {
     // @ts-ignore
     return this.http.get<string>('README.md', {responseType: 'text'})
+      .pipe(tap(), retry(2));
+  }
+
+  /**
+   * Summary: we obtain the markdown of the project CHANGELOG.md.
+   */
+  getChangelog(): Observable<string> {
+    // @ts-ignore
+    return this.http.get<string>('CHANGELOG.md', {responseType: 'text'})
       .pipe(tap(), retry(2));
   }
 
