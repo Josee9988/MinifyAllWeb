@@ -1,8 +1,8 @@
 # **MinifyAll online**
 
-Check the **[webpage now](https://minifyall.jgracia.es/)**
+An online tool to **minify** your web **code**, *you will love its simplicity!*
 
-An online tool to **minify** your web **code**.
+Check the **[webpage now](https://minifyall.jgracia.es/)**
 
 Check the **original** VSCode extension **[MinifyAll](https://github.com/Josee9988/MinifyAll)**
 
@@ -53,4 +53,4 @@ To use, test, improve or develop this project, you must:
 
 > ⚠️Remember that this tool does not guarantee a 100% effectiveness and may have some issue at some point. Use it at your own risk and always do backups of your code.⚠️
 
-*Made with a lot of ❤️❤️ by **[@Josee9988](https://github.com/Josee9988)***
+_Made with a lot of ❤️❤️ by **[@Josee9988](https://github.com/Josee9988)**_

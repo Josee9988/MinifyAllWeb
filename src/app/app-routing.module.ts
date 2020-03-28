@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeComponentComponent} from './components/home-component/home-component.component';
 import { InformationComponent } from './components/information/information.component';
+import { ChangelogComponent } from './components/changelog/changelog.component';
 
 /**
  * all routes of which the application is composed by.
@@ -10,6 +11,7 @@ export const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'}, // no route specified (go to home)
   {path: 'home', component: HomeComponentComponent},
   {path: 'info', component: InformationComponent},
+  {path: 'changelog', component: ChangelogComponent},
   {path: '**', component: HomeComponentComponent} // fallback route (not found - 404)
 ];
 
@@ -22,5 +24,5 @@ export class AppRoutingModule { }
 /**
  * Summary: array of components that will be imported in the global app.module.
  */
-export const routingComponents: Array<any> = [ HomeComponentComponent, InformationComponent
+export const routingComponents: Array<any> = [ HomeComponentComponent, InformationComponent, ChangelogComponent
 ];
