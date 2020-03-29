@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 /**
- * Obtains the readme text and parses it to HTML.
+ * Obtains some files as a text or json and also includes the function to parse from markdown to HTML.
  */
 export class MarkdownParserService {
 
@@ -30,6 +30,14 @@ export class MarkdownParserService {
   getChangelog(): Observable<string> {
     // @ts-ignore
     return this.http.get<string>('CHANGELOG.md', {responseType: 'text'})
+      .pipe(tap(), retry(2));
+  }
+
+  /**
+   * Summary: we obtain the markdown of the project PACKAGE.json.
+   */
+  getPackage(): Observable<any> {
+    return this.http.get<any>('package.json', {responseType: 'json'})
       .pipe(tap(), retry(2));
   }
 

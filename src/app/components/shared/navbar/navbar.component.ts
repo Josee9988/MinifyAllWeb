@@ -3,6 +3,7 @@ import {INavbarLinks} from './INavbarLinks.interface';
 import {map, shareReplay} from 'rxjs/operators';
 import {BreakpointObserver} from '@angular/cdk/layout';
 import {Observable} from 'rxjs';
+import {MarkdownParserService} from '../../../shared/services/markdown-parser.service';
 
 @Component({
   selector: 'app-navbar',
@@ -18,11 +19,13 @@ export class NavbarComponent implements OnInit {
     '(max-width: 959.99px) and (orientation: landscape)')
     .pipe(map(result => result.matches), shareReplay());
 
-  constructor(private breakpointObserver: BreakpointObserver) {
+  constructor(private breakpointObserver: BreakpointObserver, private markdownParserService: MarkdownParserService) {
   }
 
   ngOnInit() {
-    this.appName = 'MinifyAll';
+    this.markdownParserService.getPackage().subscribe(Response => {
+      this.appName = 'MinifyAll v' + Response.version;
+    });
     this.declareNavbarElements();
   }
 
