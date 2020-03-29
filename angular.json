@@ -27,7 +27,8 @@
               "src/favicon.ico",
               "src/assets",
               { "input": ".", "glob": "README.md", "output": "/" },
-              { "input": ".", "glob": "CHANGELOG.md", "output": "/" }
+              { "input": ".", "glob": "CHANGELOG.md", "output": "/" },
+              { "input": ".", "glob": "package.json", "output": "/" }
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
