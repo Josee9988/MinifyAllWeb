@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.1.0**] - 2020-03-29
+
+### Added
+
+* Version number in the navbar.
+
 [Published]
 
 ## [**1.0.0**] - 2020-03-28

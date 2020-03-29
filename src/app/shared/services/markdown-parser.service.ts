@@ -36,8 +36,8 @@ export class MarkdownParserService {
   /**
    * Summary: we obtain the markdown of the project PACKAGE.json.
    */
-  getPackage(): Observable<string> {
-    return this.http.get<string>('package.json', {responseType: 'json'})
+  getPackage(): Observable<any> {
+    return this.http.get<any>('package.json', {responseType: 'json'})
       .pipe(tap(), retry(2));
   }
 
