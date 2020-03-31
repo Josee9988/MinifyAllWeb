@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.1.1**] - 2020-03-31
+
+### Changed
+
+* Location of the methods that obtain the local files using HTTP. Moved from markdownparser to localfiles.
+
 ## [**1.1.0**] - 2020-03-29
 
 ### Added
