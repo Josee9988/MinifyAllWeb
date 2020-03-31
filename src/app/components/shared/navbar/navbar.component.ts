@@ -4,6 +4,7 @@ import {map, shareReplay} from 'rxjs/operators';
 import {BreakpointObserver} from '@angular/cdk/layout';
 import {Observable} from 'rxjs';
 import {MarkdownParserService} from '../../../shared/services/markdown-parser.service';
+import {LocalFilesService} from '../../../shared/services/local-files.service';
 
 @Component({
   selector: 'app-navbar',
@@ -19,11 +20,11 @@ export class NavbarComponent implements OnInit {
     '(max-width: 959.99px) and (orientation: landscape)')
     .pipe(map(result => result.matches), shareReplay());
 
-  constructor(private breakpointObserver: BreakpointObserver, private markdownParserService: MarkdownParserService) {
+  constructor(private breakpointObserver: BreakpointObserver, private markdownParserService: MarkdownParserService, private localFilesService: LocalFilesService) {
   }
 
   ngOnInit() {
-    this.markdownParserService.getPackage().subscribe(Response => {
+    this.localFilesService.getPackage().subscribe(Response => {
       this.appName = 'MinifyAll v' + Response.version;
     });
     this.declareNavbarElements();
