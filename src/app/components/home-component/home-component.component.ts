@@ -104,7 +104,7 @@ export class HomeComponentComponent extends Forms implements OnInit {
    * Summary: receives a string to be copied and copies it to the clipboard. If it can't be copied
    * it will notify the user.
    */
-  onCopyUrl(): void {
+  onCopyText(): void {
     const selectedLanguageLabel = this.getLanguageFromSelected().viewValue;
     if (this.copyClipboardService.copyToClipboard(this.minifiedCode, selectedLanguageLabel)) {
       this.snackbarDisplayerService.openSnackBar('Code copied to the clipboard', SnackbarTypeEnum.success);
@@ -112,6 +112,16 @@ export class HomeComponentComponent extends Forms implements OnInit {
       this.snackbarDisplayerService.openSnackBar(
         'The code could not be copied to the clipboard, copy it yourself!.', SnackbarTypeEnum.warning);
     }
+  }
+
+  /**
+   * Summary: selects the whole text of an html input.
+   * @param id the id of the input.
+   */
+  onSelectText(id: string) {
+    const input = document.getElementById(id) as HTMLInputElement;
+    input.focus();
+    input.select();
   }
 
   /**

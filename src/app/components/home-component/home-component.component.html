@@ -31,7 +31,7 @@
                     class="{{getLanguageFromSelected().faIcon}}"></i> Code to be minified
       </mat-label>
       <label class="full-width">
-        <textarea (paste)="autoDetectCode($event)" (blur)="onSubmit(true)" [formControl]="nonMinifiedCode"
+        <textarea id="initialCode" (dblclick)="onSelectText('initialCode')" (paste)="autoDetectCode($event)" (blur)="onSubmit(true)" [formControl]="nonMinifiedCode"
                   class="full-width" matInput placeholder="Your code to be minified"></textarea>
         <mat-error
           *ngIf="nonMinifiedCode.invalid && nonMinifiedCode.touched">{{getErrorMessage(nonMinifiedCode)}}</mat-error>
@@ -50,14 +50,22 @@
         {{getLanguageFromSelected().value !== 0 ? getLanguageFromSelected().viewValue : ''}} code
       </mat-label>
       <label class="full-width">
-        <textarea [(ngModel)]="minifiedCode" [ngModelOptions]="{standalone: true}" readonly class="full-width" matInput
+        <textarea id="codeResult" (dblclick)="onSelectText('codeResult')" [(ngModel)]="minifiedCode" [ngModelOptions]="{standalone: true}" readonly class="full-width" matInput
                   placeholder="Your minified code (readonly field)"></textarea>
       </label>
     </mat-form-field>
-    <button class="full-width hvr-pop" mat-stroked-button color="accent" [disabled]="minifiedCode===''"
-            matTooltip="Copy your minified code to your clipboard" (click)="onCopyUrl()">
+
+    <!-- Bottom textarea buttons -->
+    <div class="row">
+    <button class="hvr-pop col-md-6" mat-stroked-button color="accent" [disabled]="minifiedCode===''"
+            matTooltip="Copy your minified code to your clipboard" (click)="onSelectText('codeResult')">
+      <i class="fas fa-copy"></i> Select text
+    </button>
+    <button class="hvr-pop col-md-6" mat-stroked-button color="accent" [disabled]="minifiedCode===''"
+            matTooltip="Copy your minified code to your clipboard" (click)="onCopyText()">
       <i class="fas fa-copy"></i> Copy text
     </button>
+    </div>
   </div>
 </div>
 <br>

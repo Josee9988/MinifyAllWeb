@@ -6,11 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.2.0**] - 2020-04-02
+
+### Added
+
+* Button to select all the text from the minified textarea.
+* Event in both textareas that will be triggered with a  double click that will select all the text from the actual textarea.
+
 ## [**1.1.1**] - 2020-03-31
 
 ### Changed
 
-* Location of the methods that obtain the local files using HTTP. Moved from markdownparser to localfiles.
+* Location of the methods that obtain the local files using HTTP. Moved from markdownparser to local files.
 
 ## [**1.1.0**] - 2020-03-29
 
