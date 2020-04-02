@@ -20,7 +20,10 @@ export class NavbarComponent implements OnInit {
     '(max-width: 959.99px) and (orientation: landscape)')
     .pipe(map(result => result.matches), shareReplay());
 
-  constructor(private breakpointObserver: BreakpointObserver, private markdownParserService: MarkdownParserService, private localFilesService: LocalFilesService) {
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private markdownParserService: MarkdownParserService,
+    private localFilesService: LocalFilesService) {
   }
 
   ngOnInit() {
@@ -39,6 +42,7 @@ export class NavbarComponent implements OnInit {
       {icon: 'fas fa-info-circle', field: 'Information', route: 'info', order: 2},
       {icon: 'fas fa-clipboard-list', field: 'Changelog', route: 'changelog', order: 3},
       {icon: 'fab fa-github', field: 'GitHub repo', route: '', order: 4, externalLink: 'https://github.com/Josee9988/MinifyAllWeb'},
-      ];
+      {icon: 'fas fa-coffee', field: 'Buy me a coffee', route: '', order: 5, externalLink: 'https://www.paypal.me/josee9988'},
+    ];
   }
 }

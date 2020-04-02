@@ -6,7 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
-## [**1.2.0**] - 2020-04-02
+## [**1.1.3**] - 2020-04-02
+
+### Added
+
+* "Buy me a coffee" link to a paypal.me site.
+
+### Changed
+
+* Version tag of the last version which was incorrect. (From 1.2.0 to 1.1.2)
+
+## [**1.1.2**] - 2020-04-02
 
 ### Added
 
