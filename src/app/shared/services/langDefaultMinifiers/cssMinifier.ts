@@ -31,7 +31,7 @@ export class CssMinifier {
    *
    * Description the method will get the array with all the lines and will
    * make one String out of all of them; Then it will use REGEX
-   * to replace multiple concurrencies, like removing multiple spaces,
+   * to replace multiple concurrences, like removing multiple spaces,
    * unnecessary tabulations and specific things per each language.
    *
    * @return the line minified.
