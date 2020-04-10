@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.1.6**] - 2020-04-10
+
+### Fixed
+
+* Problem with the HTML minimization that caused the tags to don't keep its space between others.
+
 ## [**1.1.5**] - 2020-04-10
 
 ### Added
