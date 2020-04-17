@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.1.8**] - 2020-04-17
+
+### Added
+
+* Support for SPA applications in Github Pages.
+
 ## [**1.1.7**] - 2020-04-12
 
 ### Added
