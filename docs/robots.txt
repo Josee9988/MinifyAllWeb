@@ -1,0 +1,6 @@
+# Allow all URLs (see http://www.robotstxt.org/robotstxt.html)
+User-agent: *
+# We block the logo from being indexed
+Disallow: /assets/logo.png
+Visit-time: 0200-0745
+Sitemap: https://minifyall.jgracia.es/sitemap.xml
