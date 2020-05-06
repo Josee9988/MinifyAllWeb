@@ -26,6 +26,8 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              "src/sitemap.xml",
+              "src/robots.txt",
               { "input": ".", "glob": "README.md", "output": "/" },
               { "input": ".", "glob": "CHANGELOG.md", "output": "/" },
               { "input": ".", "glob": "package.json", "output": "/" }
