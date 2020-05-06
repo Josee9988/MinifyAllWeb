@@ -8,8 +8,8 @@ import { ChangelogComponent } from './components/changelog/changelog.component';
  * all routes of which the application is composed by.
  */
 export const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'home'}, // no route specified (go to home)
-  {path: 'home', component: HomeComponentComponent},
+  {path: '', pathMatch: 'full', component: HomeComponentComponent}, // no route specified (go to home)
+  {path: '', component: HomeComponentComponent},
   {path: 'info', component: InformationComponent},
   {path: 'changelog', component: ChangelogComponent},
   {path: '**', component: HomeComponentComponent} // fallback route (not found - 404)
