@@ -21,6 +21,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {Mugan86GoogleAnalyticsModule} from 'mugan86-ng-google-analytics';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSnackBarModule,
     MatSlideToggleModule,
     MatProgressBarModule,
-    HttpClientModule
+    HttpClientModule,
+    Mugan86GoogleAnalyticsModule.forRoot({analyticsId: 'UA-165732469-1', showLog: false}),
   ],
   providers: [],
   bootstrap: [AppComponent],
