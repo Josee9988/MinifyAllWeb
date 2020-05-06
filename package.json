@@ -49,6 +49,7 @@
     "@types/marked": "^0.7.3",
     "hammerjs": "^2.0.8",
     "marked": "^0.8.2",
+    "mugan86-ng-google-analytics": "^1.1.1",
     "rxjs": "~6.4.0",
     "terser": "^4.6.7",
     "tslib": "^1.10.0",
