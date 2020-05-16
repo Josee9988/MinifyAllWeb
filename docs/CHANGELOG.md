@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.2.0**] - 2020-05-16
+
+### Added
+
+* MinifyAll core instead of having the raw code inside the services folder.
+* Buymeacoffee in the funding.yaml
+
+### Changed
+
+* Link to buy me a coffee from paypal to https://www.buymeacoffee.com/josee9988
+
+### Removed
+
+* Raw minifyall code from the services folder.
+
 ## [**1.1.8**] - 2020-04-17
 
 ### Added
