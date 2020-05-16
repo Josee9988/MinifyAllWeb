@@ -7,7 +7,8 @@ import {FormControl, Validators} from '@angular/forms';
 import {CopyClipboardService} from '../../shared/services/copy-clipboard.service';
 import {DetectLanguageService} from '../../shared/services/detect-language.service';
 import {LanguagesEnum} from '../../shared/enums/Languages.enum';
-import {GlobalMinifierClass} from '../../shared/services/global-minifier.class';
+import {MinifyAllClass} from '@josee9988/minifyall/dist/index.js';
+import * as Terser from "terser";
 
 @Component({
   selector: 'app-home-component',
@@ -59,7 +60,7 @@ export class HomeComponentComponent extends Forms implements OnInit {
    * @param source the given code to be minified as an array of strings (each element in the array refeers to one line)
    */
   private minifyCode(source: []): void {
-    const minifier: GlobalMinifierClass = new GlobalMinifierClass(this.isHexMinifierEnabled);
+    const minifier: MinifyAllClass = new MinifyAllClass(this.isHexMinifierEnabled);
     switch (this.languageSelected) {
       case LanguagesEnum.HTML: // HTML
         this.minifiedCode = minifier.minifyHtml(source);
@@ -71,10 +72,10 @@ export class HomeComponentComponent extends Forms implements OnInit {
         this.minifiedCode = minifier.minifyJsonJsonc(source);
         break;
       case LanguagesEnum.JAVASCRIPT: // JAVASCRIPT
-        const jsResult = minifier.minifyJs(source);
-        if (jsResult) { // ok
-          this.minifiedCode = jsResult;
-        } else { // error
+        const minifierJs: any = Terser.minify(source.join('\n'));
+        if (minifierJs.error === undefined) {
+          this.minifiedCode = minifierJs.code;
+        } else {
           this.snackbarDisplayerService.openSnackBar('Error in the JavaScript code (Terser error)', SnackbarTypeEnum.error);
         }
         break;
