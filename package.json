@@ -1,7 +1,7 @@
 {
   "name": "minifyallweb",
   "description": "Online code minifier for HTML, CSS, JSON and JS",
-  "version": "1.1.8",
+  "version": "1.2.0",
   "author": {
     "name": "Jose Gracia",
     "email": "jgracia9988@gmail.com"
