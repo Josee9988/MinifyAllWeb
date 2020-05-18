@@ -9,6 +9,7 @@ import {DetectLanguageService} from '../../shared/services/detect-language.servi
 import {LanguagesEnum} from '../../shared/enums/Languages.enum';
 import {MinifyAllClass} from '@josee9988/minifyall';
 import * as Terser from "terser";
+import {Meta, Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-home-component',
@@ -32,11 +33,15 @@ export class HomeComponentComponent extends Forms implements OnInit {
   constructor(
     private snackbarDisplayerService: SnackbarDisplayerService,
     private copyClipboardService: CopyClipboardService,
-    private detectLanguage: DetectLanguageService) {
+    private detectLanguage: DetectLanguageService,
+    private title: Title,
+    private meta: Meta) {
     super();
   }
 
   ngOnInit() {
+    this.title.setTitle('MinifyAll - minifyall.jgracia.es');
+    this.meta.updateTag({name: 'Online code minifier for CSS, JSON, JSONC and JavaScript. Minify instantly your programming code simple, smooth and fast!'})
     this.nonMinifiedCode = new FormControl('', [Validators.required, Validators.minLength(5)]);
     this.inputs = [this.nonMinifiedCode];
   }
