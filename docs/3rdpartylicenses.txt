@@ -114,7 +114,7 @@ MIT
 MIT
 
 @josee9988/minifyall
-MIT
+BSD-3-Clause
 BSD 3-Clause License
 
 Copyright (c) 2020, Jose Gracia Berenguer

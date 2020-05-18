@@ -7,7 +7,7 @@ import {FormControl, Validators} from '@angular/forms';
 import {CopyClipboardService} from '../../shared/services/copy-clipboard.service';
 import {DetectLanguageService} from '../../shared/services/detect-language.service';
 import {LanguagesEnum} from '../../shared/enums/Languages.enum';
-import {MinifyAllClass} from '@josee9988/minifyall/dist/index.js';
+import {MinifyAllClass} from '@josee9988/minifyall';
 import * as Terser from "terser";
 
 @Component({
