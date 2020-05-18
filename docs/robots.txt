@@ -1,8 +1,4 @@
 # Allow all URLs (see http://www.robotstxt.org/robotstxt.html)
 User-agent: *
-# We block the logo from being indexed
-Disallow: /info
-Disallow: /changelog
-Disallow: /home
 Visit-time: 0200-0745
 Sitemap: https://minifyall.jgracia.es/sitemap.xml

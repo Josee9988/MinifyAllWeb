@@ -4,7 +4,7 @@
                [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false" (click)="drawer.toggle()">
     <mat-toolbar color="primary" class="hvr-hang">
       <img class="logo-header" routerLink="/" routerLinkActive="active"
-           src="../../../../assets/logo.png" alt="logo">{{appName}}
+           src="../../../../assets/logo.webp" alt="logo">{{appName}}
     </mat-toolbar>
     <mat-nav-list>
       <h2 matSubheader>Elementos de navegación</h2>
@@ -33,7 +33,7 @@
       </button>
       <span class="minium-header-pads">
         <a routerLink="/" routerLinkActive="active" class="hvr-pop">
-          <img class="logo-header-white" src="../../../../assets/logo.png" alt="logo"><span
+          <img class="logo-header-white" src="../../../../assets/logo.webp" alt="logo"><span
           class="main-navbar-text">{{appName}}</span>
         </a>
       </span>

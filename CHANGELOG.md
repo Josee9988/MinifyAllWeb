@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.2.2**] - 2020-05-18
+
+### Added
+
+* Some minnor SEO improvements such as each page using a specific title and meta description.
+
+### Changed
+
+* logo.png to logo.webp.
+
 ## [**1.2.1**] - 2020-05-18
 
 ### Changed
