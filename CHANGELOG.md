@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [Unreleased]
+
+### Added
+
+* All the routes to the sitemap.xml.
+* Angular lazy loading.
+* Angular preload.
+
+### Changed
+
+* From home-component to home-minifier.
+
+### Removed
+
+* Robots txt now allows all the routes.
+
 ## [**1.2.2**] - 2020-05-18
 
 ### Added

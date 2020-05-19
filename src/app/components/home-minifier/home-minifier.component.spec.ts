@@ -1,20 +1,20 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {ChangelogComponent} from './changelog.component';
+import {HomeMinifier} from './home-minifier.component';
 
-describe('ChangelogComponent', () => {
-  let component: ChangelogComponent;
-  let fixture: ComponentFixture<ChangelogComponent>;
+describe('HomeMinifier', () => {
+  let component: HomeMinifier;
+  let fixture: ComponentFixture<HomeMinifier>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ChangelogComponent]
+      declarations: [HomeMinifier]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChangelogComponent);
+    fixture = TestBed.createComponent(HomeMinifier);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

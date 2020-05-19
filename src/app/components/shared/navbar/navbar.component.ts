@@ -41,8 +41,20 @@ export class NavbarComponent implements OnInit {
       {icon: 'fas fa-compress-alt', field: 'Minify code', route: '', order: 1},
       {icon: 'fas fa-info-circle', field: 'Information', route: 'info', order: 2},
       {icon: 'fas fa-clipboard-list', field: 'Changelog', route: 'changelog', order: 3},
-      {icon: 'fab fa-github', field: 'GitHub repo', route: '', order: 4, externalLink: 'https://github.com/Josee9988/MinifyAllWeb'},
-      {icon: 'fas fa-coffee', field: 'Buy me a coffee', route: '', order: 5, externalLink: 'https://www.buymeacoffee.com/josee9988'},
+      {
+        icon: 'fab fa-github',
+        field: 'GitHub repo',
+        route: '',
+        order: 4,
+        externalLink: 'https://github.com/Josee9988/MinifyAllWeb'
+      },
+      {
+        icon: 'fas fa-coffee',
+        field: 'Buy me a coffee',
+        route: '',
+        order: 5,
+        externalLink: 'https://www.buymeacoffee.com/josee9988'
+      },
     ];
   }
 }

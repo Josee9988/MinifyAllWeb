@@ -7,8 +7,9 @@
 <div class="row">
   <mat-form-field class="col-md-9">
     <mat-label>Language mode</mat-label>
-    <mat-select (valueChange)="onSubmit(true)" class="text-center" matTooltip="Select the language in which your code will be minified"
-                [(value)]="languageSelected">
+    <mat-select (valueChange)="onSubmit(true)" [(value)]="languageSelected"
+                class="text-center"
+                matTooltip="Select the language in which your code will be minified">
       <mat-option *ngFor="let language of languages" [value]="language.value">
         <em class="{{language.faIcon}}"></em> {{language.viewValue}}
       </mat-option>
@@ -18,7 +19,7 @@
   <div class="col-md-3 vertical-aligned">
     <mat-slide-toggle [(ngModel)]="isHexMinifierEnabled" color="warn"
                       matTooltip="If the script should minify hexadecimal values or not (some colors may actually change a bit)">
-      <em class="fas fa-palette" [ngClass]="{'pallete-colored': isHexMinifierEnabled}"></em> Minify colors
+      <em [ngClass]="{'pallete-colored': isHexMinifierEnabled}" class="fas fa-palette"></em> Minify colors
     </mat-slide-toggle>
   </div>
 </div>
@@ -26,13 +27,14 @@
 <!-- Textarea with the code to be minified (nonMinifiedCode) -->
 <div class="row">
   <div class="col-md-6">
-    <mat-form-field class="full-width" appearance="fill">
+    <mat-form-field appearance="fill" class="full-width">
       <mat-label><i *ngIf="languageSelected !== 0"
                     class="{{getLanguageFromSelected().faIcon}}"></i> Code to be minified
       </mat-label>
       <label class="full-width">
-        <textarea id="initialCode" (dblclick)="onSelectText('initialCode')" (paste)="autoDetectCode($event)" (blur)="onSubmit(true)" [formControl]="nonMinifiedCode"
-                  class="full-width" matInput placeholder="Your code to be minified"></textarea>
+        <textarea (blur)="onSubmit(true)" (dblclick)="onSelectText('initialCode')" (paste)="autoDetectCode($event)"
+                  [formControl]="nonMinifiedCode" class="full-width"
+                  id="initialCode" matInput placeholder="Your code to be minified"></textarea>
         <mat-error
           *ngIf="nonMinifiedCode.invalid && nonMinifiedCode.touched">{{getErrorMessage(nonMinifiedCode)}}</mat-error>
         <mat-hint *ngIf="nonMinifiedCode.invalid && nonMinifiedCode.touched">Please paste here your code to be
@@ -46,25 +48,26 @@
   <div class="col-md-6">
     <mat-form-field appearance="fill" class="full-width">
       <mat-label>Output <em *ngIf="languageSelected !== 0"
-                           class="{{getLanguageFromSelected().faIcon}}"></em>
+                            class="{{getLanguageFromSelected().faIcon}}"></em>
         {{getLanguageFromSelected().value !== 0 ? getLanguageFromSelected().viewValue : ''}} code
       </mat-label>
       <label class="full-width">
-        <textarea id="codeResult" (dblclick)="onSelectText('codeResult')" [(ngModel)]="minifiedCode" [ngModelOptions]="{standalone: true}" readonly class="full-width" matInput
-                  placeholder="Your minified code (readonly field)"></textarea>
+        <textarea (dblclick)="onSelectText('codeResult')" [(ngModel)]="minifiedCode" [ngModelOptions]="{standalone: true}"
+                  class="full-width" id="codeResult" matInput placeholder="Your minified code (readonly field)"
+                  readonly></textarea>
       </label>
     </mat-form-field>
 
     <!-- Bottom textarea buttons -->
     <div class="row">
-    <button class="hvr-pop col-md-6" mat-stroked-button color="accent" [disabled]="minifiedCode===''"
-            matTooltip="Copy your minified code to your clipboard" (click)="onSelectText('codeResult')">
-      <em class="fas fa-copy"></em> Select text
-    </button>
-    <button class="hvr-pop col-md-6" mat-stroked-button color="accent" [disabled]="minifiedCode===''"
-            matTooltip="Copy your minified code to your clipboard" (click)="onCopyText()">
-      <em class="fas fa-copy"></em> Copy text
-    </button>
+      <button (click)="onSelectText('codeResult')" [disabled]="minifiedCode===''" class="hvr-pop col-md-6" color="accent"
+              mat-stroked-button matTooltip="Copy your minified code to your clipboard">
+        <em class="fas fa-copy"></em> Select text
+      </button>
+      <button (click)="onCopyText()" [disabled]="minifiedCode===''" class="hvr-pop col-md-6" color="accent"
+              mat-stroked-button matTooltip="Copy your minified code to your clipboard">
+        <em class="fas fa-copy"></em> Copy text
+      </button>
     </div>
   </div>
 </div>
@@ -72,8 +75,9 @@
 
 <!-- Submit button -->
 <div class="full-width hvr-hang">
-<button class="full-width" mat-raised-button color="primary" (click)="onSubmit()"
-        matTooltip="Minify your code"><em class="fas fa-compress-alt"></em> Minify {{getLanguageFromSelected().value !== 0 ? getLanguageFromSelected().viewValue : ''}} code
-</button>
-<mat-progress-bar *ngIf="isProcessing" class="full-width" color="warn" mode="query"></mat-progress-bar>
+  <button (click)="onSubmit()" class="full-width" color="primary" mat-raised-button
+          matTooltip="Minify your code"><em class="fas fa-compress-alt"></em>
+    Minify {{getLanguageFromSelected().value !== 0 ? getLanguageFromSelected().viewValue : ''}} code
+  </button>
+  <mat-progress-bar *ngIf="isProcessing" class="full-width" color="warn" mode="query"></mat-progress-bar>
 </div>

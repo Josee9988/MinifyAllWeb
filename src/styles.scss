@@ -1,18 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #303030; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #303030;
+}
 
 // Snackbar (information popups)
 .mat-snack-bar-container {
   max-width: none !important;
   text-align: center;
+
   button {
     color: black;
   }
 }
 
-.snackbar-* {
+.snackbar- * {
   text-align: center;
   width: 95% !important;
 }
@@ -51,6 +59,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
   -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
+
 .hvr-bounce-in:hover,
 .hvr-bounce-in:focus,
 .hvr-bounce-in:active {
@@ -59,6 +68,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
   -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
   transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
 }
+
 @-webkit-keyframes hvr-hang {
   0% {
     -webkit-transform: translateY(8px);
@@ -73,6 +83,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
     transform: translateY(8px);
   }
 }
+
 @keyframes hvr-hang {
   0% {
     -webkit-transform: translateY(8px);
@@ -87,18 +98,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
     transform: translateY(8px);
   }
 }
+
 @-webkit-keyframes hvr-hang-sink {
   100% {
     -webkit-transform: translateY(8px);
     transform: translateY(8px);
   }
 }
+
 @keyframes hvr-hang-sink {
   100% {
     -webkit-transform: translateY(8px);
     transform: translateY(8px);
   }
 }
+
 .hvr-hang {
   display: inline-block;
   vertical-align: middle;
@@ -106,6 +120,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
+
 .hvr-hang:hover,
 .hvr-hang:focus,
 .hvr-hang:active {
@@ -125,18 +140,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
   -webkit-animation-direction: normal, alternate;
   animation-direction: normal, alternate;
 }
+
 @-webkit-keyframes hvr-pop {
   50% {
     -webkit-transform: scale(1.08);
     transform: scale(1.08);
   }
 }
+
 @keyframes hvr-pop {
   50% {
     -webkit-transform: scale(1.08);
     transform: scale(1.08);
   }
 }
+
 .hvr-pop {
   display: inline-block;
   vertical-align: middle;
@@ -144,6 +162,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
+
 .hvr-pop:hover,
 .hvr-pop:focus,
 .hvr-pop:active {
