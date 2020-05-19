@@ -23,7 +23,6 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {Mugan86GoogleAnalyticsModule} from 'mugan86-ng-google-analytics';
-import { SanitizeHtmlPipe } from './shared/pipes/sanitize-html.pipe';
 import {HomeMinifier} from "./components/home-minifier/home-minifier.component";
 
 
@@ -31,8 +30,7 @@ import {HomeMinifier} from "./components/home-minifier/home-minifier.component";
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeMinifier,
-    SanitizeHtmlPipe
+    HomeMinifier
   ],
   imports: [
     BrowserModule,
@@ -58,9 +56,6 @@ import {HomeMinifier} from "./components/home-minifier/home-minifier.component";
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [
-    SanitizeHtmlPipe
-  ]
 })
 export class AppModule {
 }
