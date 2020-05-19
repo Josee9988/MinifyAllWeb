@@ -52,7 +52,7 @@
     "marked": "^0.8.2",
     "mugan86-ng-google-analytics": "^1.1.1",
     "rxjs": "~6.4.0",
-    "terser": "^4.6.13",
+    "terser": "^4.7.0",
     "tslib": "^1.13.0",
     "zone.js": "~0.9.1"
   },
@@ -63,7 +63,7 @@
     "@angular/language-service": "~8.2.14",
     "@babel/compat-data": "^7.9.6",
     "@compodoc/compodoc": "^1.1.11",
-    "@types/jasmine": "~3.3.8",
+    "@types/jasmine": "~3.5.10",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "^5.2.2",
