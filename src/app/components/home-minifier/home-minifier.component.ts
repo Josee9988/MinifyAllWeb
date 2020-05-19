@@ -13,10 +13,10 @@ import {Meta, Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-home-component',
-  templateUrl: './home-component.component.html',
-  styleUrls: ['./home-component.component.scss']
+  templateUrl: './home-minifier.component.html',
+  styleUrls: ['./home-minifier.component.scss']
 })
-export class HomeComponentComponent extends Forms implements OnInit {
+export class HomeMinifier extends Forms implements OnInit {
   languageSelected = 0;
   minifiedCode = '';
   isProcessing = false;
