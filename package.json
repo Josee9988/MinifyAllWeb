@@ -52,7 +52,7 @@
     "marked": "^0.8.2",
     "mugan86-ng-google-analytics": "^1.1.1",
     "rxjs": "~6.4.0",
-    "terser": "^4.6.13",
+    "terser": "^4.7.0",
     "tslib": "^1.13.0",
     "zone.js": "~0.9.1"
   },
