@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { InformationRoutingModule } from './information-routing.module';
+import {InformationRoutingModule} from './information-routing.module';
 import {InformationComponent} from "./information.component";
 
 
@@ -12,4 +12,5 @@ import {InformationComponent} from "./information.component";
     InformationRoutingModule
   ]
 })
-export class InformationModule { }
+export class InformationModule {
+}

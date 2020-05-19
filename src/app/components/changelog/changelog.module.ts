@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { ChangelogRoutingModule } from './changelog-routing.module';
+import {ChangelogRoutingModule} from './changelog-routing.module';
 import {ChangelogComponent} from "./changelog.component";
 
 
@@ -12,4 +12,5 @@ import {ChangelogComponent} from "./changelog.component";
     ChangelogRoutingModule
   ]
 })
-export class ChangelogModule { }
+export class ChangelogModule {
+}

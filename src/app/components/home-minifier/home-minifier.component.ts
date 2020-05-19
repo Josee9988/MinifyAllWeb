@@ -61,37 +61,6 @@ export class HomeMinifier extends Forms implements OnInit {
   }
 
   /**
-   * Summary: initialises the Global minifier class and calls the right method.
-   * @param source the given code to be minified as an array of strings (each element in the array refeers to one line)
-   */
-  private minifyCode(source: []): void {
-    const minifier: MinifyAllClass = new MinifyAllClass(this.isHexMinifierEnabled);
-    switch (this.languageSelected) {
-      case LanguagesEnum.HTML: // HTML
-        this.minifiedCode = minifier.minifyHtml(source);
-        break;
-      case LanguagesEnum.CSS: // CSS
-        this.minifiedCode = minifier.minifyCssScssLessSass(source);
-        break;
-      case LanguagesEnum.JSON: // JSON
-        this.minifiedCode = minifier.minifyJsonJsonc(source);
-        break;
-      case LanguagesEnum.JAVASCRIPT: // JAVASCRIPT
-        const minifierJs: any = Terser.minify(source.join('\n'));
-        if (minifierJs.error === undefined) {
-          this.minifiedCode = minifierJs.code;
-        } else {
-          this.snackbarDisplayerService.openSnackBar('Error in the JavaScript code (Terser error)', SnackbarTypeEnum.error);
-        }
-        break;
-      default: // ERROR
-        this.snackbarDisplayerService.openSnackBar(
-          'Unexpected error while minifying. Please tell us how this happened!', SnackbarTypeEnum.error);
-        break;
-    }
-  }
-
-  /**
    * Summary: auto detects the language.
    * @param $event the paste event.
    */
@@ -135,5 +104,36 @@ export class HomeMinifier extends Forms implements OnInit {
    */
   getLanguageFromSelected(): ILanguagesInterface {
     return this.languages.find((language) => language.value === this.languageSelected);
+  }
+
+  /**
+   * Summary: initialises the Global minifier class and calls the right method.
+   * @param source the given code to be minified as an array of strings (each element in the array refeers to one line)
+   */
+  private minifyCode(source: []): void {
+    const minifier: MinifyAllClass = new MinifyAllClass(this.isHexMinifierEnabled);
+    switch (this.languageSelected) {
+      case LanguagesEnum.HTML: // HTML
+        this.minifiedCode = minifier.minifyHtml(source);
+        break;
+      case LanguagesEnum.CSS: // CSS
+        this.minifiedCode = minifier.minifyCssScssLessSass(source);
+        break;
+      case LanguagesEnum.JSON: // JSON
+        this.minifiedCode = minifier.minifyJsonJsonc(source);
+        break;
+      case LanguagesEnum.JAVASCRIPT: // JAVASCRIPT
+        const minifierJs: any = Terser.minify(source.join('\n'));
+        if (minifierJs.error === undefined) {
+          this.minifiedCode = minifierJs.code;
+        } else {
+          this.snackbarDisplayerService.openSnackBar('Error in the JavaScript code (Terser error)', SnackbarTypeEnum.error);
+        }
+        break;
+      default: // ERROR
+        this.snackbarDisplayerService.openSnackBar(
+          'Unexpected error while minifying. Please tell us how this happened!', SnackbarTypeEnum.error);
+        break;
+    }
   }
 }
