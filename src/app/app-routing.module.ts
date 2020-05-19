@@ -10,8 +10,8 @@ import { ChangelogComponent } from './components/changelog/changelog.component';
 export const routes: Routes = [
   {path: '', pathMatch: 'full', component: HomeComponentComponent}, // no route specified (go to home)
   {path: '', component: HomeComponentComponent},
-  {path: 'info', component: InformationComponent},
-  {path: 'changelog', component: ChangelogComponent},
+  {path: 'info', loadChildren:  () => import('./components/information/information.module').then(m => m.InformationModule)},
+  {path: 'changelog', loadChildren:  () => import('./components/changelog/changelog.module').then(m => m.ChangelogModule)},
   {path: '**', component: HomeComponentComponent} // fallback route (not found - 404)
 ];
 
