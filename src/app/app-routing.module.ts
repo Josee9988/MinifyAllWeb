@@ -25,8 +25,3 @@ export const routes: Routes = [
 })
 export class AppRoutingModule {
 }
-
-/**
- * Summary: array of components that will be imported in the global app.module. (only the ones that will not be preloaded)
- */
-export const routingComponents: Array<any> = [HomeMinifier];

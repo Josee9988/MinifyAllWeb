@@ -17,6 +17,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 ### Changed
 
 * From home-component to home-minifier.
+* Bumped from Angular 8 to Angular 9.
+
+### Fixed
+
+* Mobile navigation, wrong padding left (now set to 5px).
 
 ### Removed
 

@@ -14,13 +14,13 @@
 
           <a *ngIf="!item.externalLink" [routerLink]="item.route" class="hvr-bounce-in" mat-list-item
              routerLinkActive="active">
-            <em class="{{item.icon}}"></em> {{item.field}}
+            <em class="{{item.icon}} icon"></em> {{item.field}}
           </a>
 
           <!-- If with external link -->
           <a *ngIf="item.externalLink" class="hvr-bounce-in" href="{{ item.externalLink }}" mat-list-item
              routerLinkActive="active">
-            <em class="{{item.icon}}"></em> {{item.field}}
+            <em class="{{item.icon}} icon"></em> {{item.field}}
           </a>
 
         </li>
