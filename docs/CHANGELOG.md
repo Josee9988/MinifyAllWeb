@@ -6,6 +6,31 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.3.0**] - 2020-05-22
+
+### Added
+
+* Support for PWA's.
+* All the routes to the sitemap.xml.
+* Angular lazy loading.
+* Angular preload.
+* Meta tag for caching the data by 7 days.
+* Noscript tag in the index.html to warn the user if he doesn't have JS enabled.
+
+### Changed
+
+* From home-component to home-minifier.
+* Bumped from Angular 8 to Angular 9.
+
+### Fixed
+
+* Accesibility problems.
+* Mobile navigation, wrong padding left (now set to 5px).
+
+### Removed
+
+* Robots txt now allows all the routes.
+
 ## [**1.2.2**] - 2020-05-18
 
 ### Added
