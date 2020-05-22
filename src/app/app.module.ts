@@ -24,6 +24,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {Mugan86GoogleAnalyticsModule} from 'mugan86-ng-google-analytics';
 import {HomeMinifier} from "./components/home-minifier/home-minifier.component";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -53,6 +55,7 @@ import {HomeMinifier} from "./components/home-minifier/home-minifier.component";
     MatProgressBarModule,
     HttpClientModule,
     Mugan86GoogleAnalyticsModule.forRoot({analyticsId: 'UA-165732469-1', showLog: false}),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent],

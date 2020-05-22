@@ -30,7 +30,8 @@
               "src/robots.txt",
               { "input": ".", "glob": "README.md", "output": "/" },
               { "input": ".", "glob": "CHANGELOG.md", "output": "/" },
-              { "input": ".", "glob": "package.json", "output": "/" }
+              { "input": ".", "glob": "package.json", "output": "/" },
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
@@ -65,7 +66,9 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json"
             }
           }
         },
@@ -95,7 +98,8 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
