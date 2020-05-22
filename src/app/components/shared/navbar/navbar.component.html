@@ -47,12 +47,11 @@
         </button>
 
         <!-- If with external link -->
-        <a class="external-link" href="{{item.externalLink}}">
-          <button *ngIf="item.externalLink" class="hvr-bounce-in top-navbar-item"
-                  mat-button>
+        <div class="external-link">
+          <a href="{{item.externalLink}}" *ngIf="item.externalLink" class="hvr-bounce-in top-navbar-item" mat-button>
             <em class="{{item.icon}}"></em> {{item.field}}
-          </button>
-        </a>
+          </a>
+        </div>
       </div>
 
       <div class="hvr-bounce-in top-navbar-item">
