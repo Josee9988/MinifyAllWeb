@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.3.1**] - 2020-05-22
+
+### Added
+
+* Canonical link
+* Bootstrap used style file with the minified bootstrap but only with the used classes and styles.
+* Folder with all the style files.
+
+### Removed
+
+* Bootstrap CDN.
+
+### Fixed
+
+* Meta tag "og:image" link.
+
 ## [**1.3.0**] - 2020-05-22
 
 ### Added
@@ -24,7 +40,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ### Fixed
 
-* Accesibility problems.
+* Accessibility problems.
 * Mobile navigation, wrong padding left (now set to 5px).
 
 ### Removed
