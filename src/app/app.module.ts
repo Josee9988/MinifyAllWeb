@@ -26,6 +26,7 @@ import {Mugan86GoogleAnalyticsModule} from 'mugan86-ng-google-analytics';
 import {HomeMinifier} from "./components/home-minifier/home-minifier.component";
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import {SharedModuleModule} from "./shared-module.module";
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { environment } from '../environments/environment';
     HomeMinifier
   ],
   imports: [
+    SharedModuleModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
