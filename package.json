@@ -2,6 +2,18 @@
   "name": "minifyallweb",
   "description": "Online code minifier for HTML, CSS, JSON and JS",
   "version": "1.2.2",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --prod --optimization --common-chunk --vendor-chunk --named-chunks --aot --build-optimizer && npm run cname && npm run 404gh-pageshack",
+    "build:test": "ng build --prod --optimization --common-chunk --vendor-chunk --named-chunks --aot --build-optimizer --output-path=dist/",
+    "cname": "echo 'minifyall.jgracia.es' > ./docs/CNAME",
+    "404gh-pageshack": "echo '<script>const path=window.location.pathname.slice(1);localStorage.setItem(\"path\",path);window.location.href=\"../\";</script>' > ./docs/404.html",
+    "compodoc": "compodoc src -p tsconfig.json --name 'MinifyAll Web' --output ./compodoc/",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
   "author": {
     "name": "Jose Gracia",
     "email": "jgracia9988@gmail.com"
@@ -22,17 +34,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Josee9988/MinifyAllWeb.git"
-  },
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --prod --optimization --named-chunks --aot --build-optimizer && npm run cname && npm run 404gh-pageshack",
-    "cname": "echo 'minifyall.jgracia.es' > ./docs/CNAME",
-    "404gh-pageshack": "echo '<script>const path=window.location.pathname.slice(1);localStorage.setItem(\"path\",path);window.location.href=\"../\";</script>' > ./docs/404.html",
-    "compodoc": "compodoc src -p tsconfig.json --name 'MinifyAll Web' --output ./compodoc/",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
