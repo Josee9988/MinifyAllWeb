@@ -10,9 +10,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ### Added
 
+* Support for PWA's.
 * All the routes to the sitemap.xml.
 * Angular lazy loading.
 * Angular preload.
+* Meta tag for caching the data by 7 days.
+* Noscript tag in the index.html to warn the user if he doesn't have JS enabled.
 
 ### Changed
 
@@ -21,6 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ### Fixed
 
+* Accesibility problems.
 * Mobile navigation, wrong padding left (now set to 5px).
 
 ### Removed
