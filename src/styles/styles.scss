@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap");
+@import "used-bootstrap.min";
+@import "animations";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #303030;
+}
+
+// Snackbar (information popups)
+.mat-snack-bar-container {
+  max-width: none !important;
+  text-align: center;
+
+  button {
+    color: black;
+  }
+}
+
+.snackbar- * {
+  text-align: center;
+  width: 95% !important;
+}
+
+.snackbar-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.snackbar-warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.snackbar-info {
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+}
+
+.snackbar-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
