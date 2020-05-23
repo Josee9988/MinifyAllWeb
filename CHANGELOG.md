@@ -10,7 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ### Added
 
-* Meta preconnect tag to Fontawesome and google analytics.
+* Meta preconnect tag to Fontawesome, fonts.gstatic and google analytics.
 * Added angular SSR (not in use yet but it is prepared).
 * Ngcc postinstall.
 
