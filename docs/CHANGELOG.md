@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.3.2**] - 2020-05-23
+
+### Added
+
+* Meta preconnect tag to Fontawesome and google analytics.
+* Added angular SSR (not in use yet but it is prepared).
+* Ngcc postinstall.
+
 ## [**1.3.1**] - 2020-05-22
 
 ### Added
