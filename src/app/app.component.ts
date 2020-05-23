@@ -13,11 +13,11 @@ export class AppComponent {
    * HACK TO ALLOW TO USE SPA IN GITHUB PAGES
    * TODO: if purchasing a server remove this
    */
-  /*constructor(private router: Router) {
+  constructor(private router: Router) {
     const path = localStorage.getItem('path');
     if (path) {
       localStorage.removeItem('path');
       this.router.navigate([path]);
     }
-  }*/
+  }
 }

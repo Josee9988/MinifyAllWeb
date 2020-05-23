@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "postinstall": "ngcc",
-    "build": "ng build --prod --optimization --common-chunk --vendor-chunk --named-chunks --aot --build-optimizer && npm run cname && npm run 404gh-pageshack",
+    "build": "ng build --prod --optimization --common-chunk --vendor-chunk --named-chunks --aot --build-optimizer --output-path=docs/ && npm run cname && npm run 404gh-pageshack",
     "build:test": "ng build --prod --optimization --common-chunk --vendor-chunk --named-chunks --aot --build-optimizer --output-path=dist/",
     "cname": "echo 'minifyall.jgracia.es' > ./docs/CNAME",
     "404gh-pageshack": "echo '<script>const path=window.location.pathname.slice(1);localStorage.setItem(\"path\",path);window.location.href=\"../\";</script>' > ./docs/404.html",
