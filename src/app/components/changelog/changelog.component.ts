@@ -19,7 +19,7 @@ export class ChangelogComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.title.setTitle('MinifyAll .');
+    this.title.setTitle('MinifyAll changelog');
     this.meta.updateTag({name: 'Online code minifier for CSS, JSON, JSONC and JavaScript. Minify instantly your programming code simple, smooth and fast!'})
     this.localFilesService.getChangelog().subscribe(Markdown => {
       this.convertedText = this.markdownParserService.markdownToHtml(Markdown);
