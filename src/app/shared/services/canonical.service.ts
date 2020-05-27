@@ -1,5 +1,5 @@
-import { Injectable, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import {Inject, Injectable} from '@angular/core';
+import {DOCUMENT} from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +7,8 @@ import { DOCUMENT } from '@angular/common';
 
 export class CanonicalService {
 
-  constructor(@Inject(DOCUMENT) private dom) { }
+  constructor(@Inject(DOCUMENT) private dom) {
+  }
 
   setCanonicalURL(url?: string) {
     const canURL = url == undefined ? this.dom.URL : url;

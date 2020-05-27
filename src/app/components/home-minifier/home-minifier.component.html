@@ -52,7 +52,8 @@
         {{getLanguageFromSelected().value !== 0 ? getLanguageFromSelected().viewValue : ''}} code
       </mat-label>
       <label class="full-width">
-        <textarea (dblclick)="onSelectText('codeResult')" [(ngModel)]="minifiedCode" [ngModelOptions]="{standalone: true}"
+        <textarea (dblclick)="onSelectText('codeResult')" [(ngModel)]="minifiedCode"
+                  [ngModelOptions]="{standalone: true}"
                   class="full-width" id="codeResult" matInput placeholder="Your minified code (readonly field)"
                   readonly></textarea>
       </label>
@@ -60,7 +61,8 @@
 
     <!-- Bottom textarea buttons -->
     <div class="row">
-      <button (click)="onSelectText('codeResult')" [disabled]="minifiedCode===''" class="hvr-pop col-md-6" color="accent"
+      <button (click)="onSelectText('codeResult')" [disabled]="minifiedCode===''" class="hvr-pop col-md-6"
+              color="accent"
               mat-stroked-button matTooltip="Copy your minified code to your clipboard">
         <em class="fas fa-copy"></em> Select text
       </button>

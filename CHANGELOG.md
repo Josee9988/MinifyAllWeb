@@ -11,6 +11,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 ### Added
 
 * Canonical link on page refresh.
+* SEOService to update meta tags on every route.
+* Config for the routes to scroll back on top smoothly.
+
+### Changed
+
+* Some meta tags in the index.html file.
 
 ## [**1.3.2**] - 2020-05-23
 
