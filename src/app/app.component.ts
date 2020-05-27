@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {CanonicalService} from "./shared/services/canonical.service";
+import {SeoService} from "./shared/services/seo.service";
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit{
    * HACK TO ALLOW TO USE SPA IN GITHUB PAGES
    * TODO: if purchasing a server remove this
    */
-  constructor(private router: Router, private canonicalService: CanonicalService) {
+  constructor(private router: Router, private canonicalService: CanonicalService, private seo: SeoService) {
     const path = localStorage.getItem('path');
     if (path) {
       localStorage.removeItem('path');
@@ -24,6 +25,6 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     this.canonicalService.setCanonicalURL();
-
+    this.seo.generateTags();
   }
 }
