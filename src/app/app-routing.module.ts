@@ -6,7 +6,6 @@ import {HomeMinifier} from './components/home-minifier/home-minifier.component';
  * all routes of which the application is composed by.
  */
 export const routes: Routes = [
-  {path: '', pathMatch: 'full', component: HomeMinifier}, // no route specified (go to home)
   {path: '', component: HomeMinifier},
   {
     path: 'info',
@@ -16,11 +15,16 @@ export const routes: Routes = [
     path: 'changelog',
     loadChildren: () => import('./components/changelog/changelog.module').then(m => m.ChangelogModule)
   },
-  {path: '**', component: HomeMinifier} // fallback route (not found - 404)
+  {path: '**', redirectTo: ''} // fallback route (not found - 404)
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, initialNavigation: 'enabled' })],
+  imports: [RouterModule.forRoot(routes, {
+    enableTracing: false,
+    initialNavigation: 'enabled',
+    preloadingStrategy: PreloadAllModules,
+    scrollPositionRestoration: 'enabled'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

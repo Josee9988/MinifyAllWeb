@@ -2,6 +2,10 @@
 @import "used-bootstrap.min";
 @import "animations";
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   height: 100%;
 }
