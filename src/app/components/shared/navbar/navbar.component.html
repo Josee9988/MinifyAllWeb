@@ -42,13 +42,13 @@
       <span class="fill-space"></span>
       <div *ngFor="let item of navbarLinks" class="hvr-bounce-in">
         <a *ngIf="!item.externalLink" [routerLink]="item.route" class="top-navbar-item" mat-button
-           routerLinkActive="active">
+                routerLinkActive="active">
           <em class="{{item.icon}}"></em> {{item.field}}
         </a>
 
         <!-- If with external link -->
         <div class="external-link hvr-bounce-in">
-          <a *ngIf="item.externalLink" class="top-navbar-item" href="{{item.externalLink}}" mat-button>
+          <a href="{{item.externalLink}}" *ngIf="item.externalLink" class="top-navbar-item" mat-button>
             <em class="{{item.icon}}"></em> {{item.field}}
           </a>
         </div>
