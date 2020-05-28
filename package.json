@@ -10,7 +10,7 @@
     "build:test": "ng build --prod --optimization --common-chunk --vendor-chunk --named-chunks --aot --build-optimizer --output-path=dist/",
     "dev:ssr": "ng run MinifyAll:serve-ssr",
     "serve:ssr": "node dist/MinifyAll/server/main.js",
-    "build:ssr": "ng build --prod && ng run MinifyAll:server:production",
+    "build:ssr": "ng build --prod --optimization --common-chunk --vendor-chunk --named-chunks --aot --build-optimizer && ng run MinifyAll:server:production",
     "cname": "echo 'minifyall.jgracia.es' > ./docs/CNAME",
     "404gh-pageshack": "echo '<script>const path=window.location.pathname.slice(1);localStorage.setItem(\"path\",path);window.location.href=\"../\";</script>' > ./docs/404.html",
     "compodoc": "compodoc src -p tsconfig.json --name 'MinifyAll Web' --output ./compodoc/",
@@ -79,6 +79,7 @@
     "@types/jasmine": "~3.5.10",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.12.42",
+    "bufferutil": "^4.0.1",
     "codelyzer": "^5.1.2",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -91,6 +92,9 @@
     "protractor": "^7.0.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.8.3"
+    "typescript": "~3.8.3",
+    "utf-8-validate": "^5.0.2",
+    "ws": "^7.3.0",
+    "xhr2": "^0.2.0"
   }
 }
