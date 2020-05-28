@@ -28,9 +28,21 @@
               "src/assets",
               "src/sitemap.xml",
               "src/robots.txt",
-              { "input": ".", "glob": "README.md", "output": "/" },
-              { "input": ".", "glob": "CHANGELOG.md", "output": "/" },
-              { "input": ".", "glob": "package.json", "output": "/" },
+              {
+                "input": ".",
+                "glob": "README.md",
+                "output": "/"
+              },
+              {
+                "input": ".",
+                "glob": "CHANGELOG.md",
+                "output": "/"
+              },
+              {
+                "input": ".",
+                "glob": "package.json",
+                "output": "/"
+              },
               "src/manifest.webmanifest"
             ],
             "styles": [
@@ -138,7 +150,10 @@
           "options": {
             "outputPath": "dist/MinifyAll/server",
             "main": "server.ts",
-            "tsConfig": "tsconfig.server.json"
+            "tsConfig": "tsconfig.server.json",
+            "externalDependencies": [
+              "@firebase/firestore"
+            ]
           },
           "configurations": {
             "production": {
@@ -178,6 +193,12 @@
           },
           "configurations": {
             "production": {}
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "ssr": true
           }
         }
       }
