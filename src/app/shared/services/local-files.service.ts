@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {retry, tap} from 'rxjs/operators';
 import {Observable} from 'rxjs';
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class LocalFilesService {
    */
   getReadme(): Observable<string> {
     // @ts-ignore
-    return this.http.get<string>('README.md', {responseType: 'text'})
+    return this.http.get<string>(environment.url + 'README.md', {responseType: 'text'})
       .pipe(tap(), retry(2));
   }
 
@@ -28,7 +29,7 @@ export class LocalFilesService {
    */
   getChangelog(): Observable<string> {
     // @ts-ignore
-    return this.http.get<string>('CHANGELOG.md', {responseType: 'text'})
+    return this.http.get<string>(environment.url + 'CHANGELOG.md', {responseType: 'text'})
       .pipe(tap(), retry(2));
   }
 
@@ -36,7 +37,7 @@ export class LocalFilesService {
    * Summary: we obtain the markdown of the project PACKAGE.json.
    */
   getPackage(): Observable<any> {
-    return this.http.get<any>('package.json', {responseType: 'json'})
+    return this.http.get<any>(environment.url + 'package.json', {responseType: 'json'})
       .pipe(tap(), retry(2));
   }
 }

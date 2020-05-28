@@ -1,23 +1,26 @@
 {
   "name": "minifyallweb",
   "description": "Online code minifier for HTML, CSS, JSON and JS",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "postinstall": "ngcc",
     "build": "ng build --prod --optimization --common-chunk --vendor-chunk --named-chunks --aot --build-optimizer --output-path=docs/ && npm run cname && npm run 404gh-pageshack",
     "build:test": "ng build --prod --optimization --common-chunk --vendor-chunk --named-chunks --aot --build-optimizer --output-path=dist/",
-    "dev:ssr": "ng run MinifyAll:serve-ssr",
-    "serve:ssr": "node dist/MinifyAll/server/main.js",
-    "build:ssr": "ng build --prod --optimization --common-chunk --vendor-chunk --named-chunks --aot --build-optimizer && ng run MinifyAll:server:production",
     "cname": "echo 'minifyall.jgracia.es' > ./docs/CNAME",
     "404gh-pageshack": "echo '<script>const path=window.location.pathname.slice(1);localStorage.setItem(\"path\",path);window.location.href=\"../\";</script>' > ./docs/404.html",
     "compodoc": "compodoc src -p tsconfig.json --name 'MinifyAll Web' --output ./compodoc/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prerender": "ng run MinifyAll:prerender"
+    "dev:ssr": "ng run MinifyAll:serve-ssr",
+    "serve:ssr": "node dist/MinifyAll/server/main.js",
+    "build:ssr": "ng build --prod && ng run MinifyAll:server:production",
+    "prerender": "ng run MinifyAll:prerender",
+    "firebase:deploy": "ng deploy",
+    "firebase:deploy:preview": "ng deploy --preview",
+    "firebase:deploy:disable": "firebase hosting:disable --project minifyallweb"
   },
   "author": {
     "name": "Jose Gracia",
@@ -47,6 +50,7 @@
     "@angular/common": "^9.1.9",
     "@angular/compiler": "^9.1.9",
     "@angular/core": "^9.1.9",
+    "@angular/fire": "^6.0.0",
     "@angular/forms": "^9.1.9",
     "@angular/material": "^8.2.3",
     "@angular/platform-browser": "^9.1.9",
@@ -61,6 +65,7 @@
     "express": "^4.15.2",
     "hammerjs": "^2.0.8",
     "marked": "^0.8.2",
+    "mock-browser": "^0.92.14",
     "mugan86-ng-google-analytics": "^1.1.1",
     "rxjs": "~6.5.5",
     "terser": "^4.7.0",
@@ -79,7 +84,6 @@
     "@types/jasmine": "~3.5.10",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.12.42",
-    "bufferutil": "^4.0.1",
     "codelyzer": "^5.1.2",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -93,8 +97,13 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.8.3",
-    "utf-8-validate": "^5.0.2",
-    "ws": "^7.3.0",
-    "xhr2": "^0.2.0"
+    "@angular-devkit/architect": "~0.900",
+    "firebase-tools": "^8.0.0",
+    "fuzzy": "^0.1.3",
+    "inquirer": "^6.2.2",
+    "inquirer-autocomplete-prompt": "^1.0.1",
+    "firebase-admin": "^8.10.0",
+    "firebase-functions": "^3.6.0",
+    "firebase-functions-test": "^0.1.7"
   }
 }

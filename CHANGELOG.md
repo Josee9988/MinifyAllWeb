@@ -6,10 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
-## [Unreleased]
+## [**1.4.0**] - 2020-05-28
 
 ### Added
 
+* App using Firebase hosting to use angular universal SSR to improve app render performance.
+* "a" tags with title.
 * Canonical link on page refresh.
 * SEOService to update meta tags on every route.
 * Config for the routes to scroll back on top smoothly.

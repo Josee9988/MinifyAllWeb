@@ -46,4 +46,6 @@ testem.log
 Thumbs.db
 
 /compodoc
-!/firebase-debug.log
+
+.firebaserc
+.firebase/
