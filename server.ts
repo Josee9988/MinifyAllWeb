@@ -7,7 +7,6 @@ import {join} from 'path';
 import {AppServerModule} from './src/main.server';
 import {APP_BASE_HREF} from '@angular/common';
 import {existsSync} from 'fs';
-
 import 'localstorage-polyfill'
 
 global['localStorage'] = localStorage;
@@ -19,6 +18,14 @@ const mock = new MockBrowser();
 global['document'] = mock.getDocument();
 global['window'] = mock.getWindow();
 
+Object.defineProperty(document.body.style, 'transform', {
+  value: () => {
+    return {
+      enumerable: true,
+      configurable: true
+    };
+  },
+});
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app() {
