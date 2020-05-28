@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./docs/",
+    "outDir": "./dist/",
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,

@@ -2,32 +2,27 @@ import 'zone.js/dist/zone-node';
 
 import {ngExpressEngine} from '@nguniversal/express-engine';
 import * as express from 'express';
-import * as compression from 'compression';
 import {join} from 'path';
 
 import {AppServerModule} from './src/main.server';
 import {APP_BASE_HREF} from '@angular/common';
 import {existsSync} from 'fs';
-import 'localstorage-polyfill';
 
-const domino = require("domino");
-const fs = require("fs");
-const path = require("path");
-const templateA = fs.readFileSync(path.join("dist/MinifyAll/browser", "index.html")).toString();
-const win = domino.createWindow(templateA);
-win.Object = Object;
-win.Math = Math;
+import 'localstorage-polyfill'
 
-global["window"] = win;
-global["document"] = win.document;
-global["branch"] = null;
-global["object"] = win.object;
 global['localStorage'] = localStorage;
+
+
+const MockBrowser = require('mock-browser').mocks.MockBrowser;
+const mock = new MockBrowser();
+
+global['document'] = mock.getDocument();
+global['window'] = mock.getWindow();
+
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app() {
   const server = express();
-  server.use(compression());
   const distFolder = join(process.cwd(), 'dist/MinifyAll/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
 
