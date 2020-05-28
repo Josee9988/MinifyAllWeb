@@ -1,7 +1,7 @@
 {
   "name": "minifyallweb",
   "description": "Online code minifier for HTML, CSS, JSON and JS",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -18,8 +18,9 @@
     "serve:ssr": "node dist/MinifyAll/server/main.js",
     "build:ssr": "ng build --prod && ng run MinifyAll:server:production",
     "prerender": "ng run MinifyAll:prerender",
-    "deploy": "ng deploy",
-    "deploy:preview": "ng deploiy --preview"
+    "firebase:deploy": "ng deploy",
+    "firebase:deploy:preview": "ng deploy --preview",
+    "firebase:deploy:disable": "firebase hosting:disable --project minifyallweb"
   },
   "author": {
     "name": "Jose Gracia",

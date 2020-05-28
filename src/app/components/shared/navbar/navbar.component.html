@@ -12,13 +12,13 @@
       <ul>
         <li *ngFor="let item of navbarLinks">
 
-          <a *ngIf="!item.externalLink" [routerLink]="item.route" class="hvr-bounce-in" mat-list-item
+          <a title="{{item.field}}" *ngIf="!item.externalLink" [routerLink]="item.route" class="hvr-bounce-in" mat-list-item
              routerLinkActive="active">
             <em class="{{item.icon}} icon"></em> {{item.field}}
           </a>
 
           <!-- If with external link -->
-          <a *ngIf="item.externalLink" class="hvr-bounce-in" href="{{ item.externalLink }}" mat-list-item
+          <a title="{{item.field}}" *ngIf="item.externalLink" class="hvr-bounce-in" href="{{ item.externalLink }}" mat-list-item
              routerLinkActive="active">
             <em class="{{item.icon}} icon"></em> {{item.field}}
           </a>
@@ -33,7 +33,7 @@
         <em aria-label="Side nav toggle icon" class="fas fa-bars"></em>
       </button>
       <span class="minium-header-pads">
-        <a class="hvr-pop" routerLink="/" routerLinkActive="active">
+        <a title="Main page" class="hvr-pop" routerLink="/" routerLinkActive="active">
           <img alt="logo" class="logo-header-white" src="../../../../assets/logo.webp"><span
           class="main-navbar-text">{{appName}}</span>
         </a>
@@ -41,14 +41,14 @@
 
       <span class="fill-space"></span>
       <div *ngFor="let item of navbarLinks" class="hvr-bounce-in">
-        <a *ngIf="!item.externalLink" [routerLink]="item.route" class="top-navbar-item" mat-button
+        <a title="{{item.field}}" *ngIf="!item.externalLink" [routerLink]="item.route" class="top-navbar-item" mat-button
                 routerLinkActive="active">
           <em class="{{item.icon}}"></em> {{item.field}}
         </a>
 
         <!-- If with external link -->
         <div class="external-link hvr-bounce-in">
-          <a href="{{item.externalLink}}" *ngIf="item.externalLink" class="top-navbar-item" mat-button>
+          <a title="{{item.field}}" href="{{item.externalLink}}" *ngIf="item.externalLink" class="top-navbar-item" mat-button>
             <em class="{{item.icon}}"></em> {{item.field}}
           </a>
         </div>
