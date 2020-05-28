@@ -1,0 +1,17 @@
+{
+  "name": "MinifyAll",
+  "short_name": "MinifyAll",
+  "theme_color": "#c2185b",
+  "background_color": "#303030",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "/assets/logo.webp",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}
