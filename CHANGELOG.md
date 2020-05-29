@@ -6,7 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
-## [**Version**] - 2020-05-29
+## [**1.4.2**] - 2020-05-29
+
+### Changed
+
+* Updated from angular material v8 to v9.
 
 ### Fixed
 
