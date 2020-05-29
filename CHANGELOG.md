@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.4.2**] - 2020-05-29
+
+### Changed
+
+* Updated from angular material v8 to v9.
+
+### Fixed
+
+* SEO problem with the cache (now the images and css/js resources are highly time cached).
+* SEO canonical url will not add a duplicate entry. (ignored firebase hosting domains).
+
 ## [**1.4.1**] - 2020-05-29
 
 ### Fixed
