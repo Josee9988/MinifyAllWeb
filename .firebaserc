@@ -1,5 +1,11 @@
 {
-  "projects": {
-    "default": "minifyallweb"
+  "targets": {
+    "minifyallweb": {
+      "hosting": {
+        "MinifyAll": [
+          "minifyallweb"
+        ]
+      }
+    }
   }
 }
