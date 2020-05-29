@@ -13,6 +13,26 @@
           "source": "**",
           "function": "ssr"
         }
+      ],
+      "headers": [
+        {
+          "source": "**/*.@(js|css)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=2592000000"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(jpg|jpeg|gif|png|webp)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=12960000000"
+            }
+          ]
+        }
       ]
     }
   ],
