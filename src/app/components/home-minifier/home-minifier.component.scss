@@ -2,6 +2,11 @@
   width: 100%;
 }
 
+main {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
 textarea {
   height: 40vh;
 }
@@ -21,4 +26,9 @@ mat-option {
 
 .pallete-colored {
   color: #2da1e6;
+}
+
+.button-row {
+  padding-left: 2%;
+  padding-right: 2%;
 }
