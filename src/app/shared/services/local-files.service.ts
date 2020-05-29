@@ -11,8 +11,11 @@ import {environment} from "../../../environments/environment";
  * Class that obtain the files that are stored alongside with the web to obtain some extra data.
  */
 export class LocalFilesService {
+  pageUrl: string;
 
   constructor(private http: HttpClient) {
+    // use the absolute url only if the environment is set to production
+    environment.production ? this.pageUrl = environment.url : this.pageUrl = '';
   }
 
   /**
@@ -20,7 +23,7 @@ export class LocalFilesService {
    */
   getReadme(): Observable<string> {
     // @ts-ignore
-    return this.http.get<string>(environment.url + 'README.md', {responseType: 'text'})
+    return this.http.get<string>(this.pageUrl + 'README.md', {responseType: 'text'})
       .pipe(tap(), retry(2));
   }
 
@@ -29,7 +32,7 @@ export class LocalFilesService {
    */
   getChangelog(): Observable<string> {
     // @ts-ignore
-    return this.http.get<string>(environment.url + 'CHANGELOG.md', {responseType: 'text'})
+    return this.http.get<string>(this.pageUrl + 'CHANGELOG.md', {responseType: 'text'})
       .pipe(tap(), retry(2));
   }
 
@@ -37,7 +40,7 @@ export class LocalFilesService {
    * Summary: we obtain the markdown of the project PACKAGE.json.
    */
   getPackage(): Observable<any> {
-    return this.http.get<any>(environment.url + 'package.json', {responseType: 'json'})
+    return this.http.get<any>(this.pageUrl + 'package.json', {responseType: 'json'})
       .pipe(tap(), retry(2));
   }
 }
