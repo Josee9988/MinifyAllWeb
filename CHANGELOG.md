@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**Version**] - 2020-05-29
+
+### Fixed
+
+* SEO problem with the cache (now the images and css/js resources are highly time cached).
+* SEO canonical url will not add a duplicate entry. (ignored firebase hosting domains).
+
 ## [**1.4.1**] - 2020-05-29
 
 ### Fixed
