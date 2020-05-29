@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.4.1**] - 2020-05-29
+
+### Fixed
+
+* Page occupying more than 100% width.
+* Markdown routes (information and changelog) importing from global styles.
+* Minnor typo in the readm.md.
+
 ## [**1.4.0**] - 2020-05-28
 
 ### Added

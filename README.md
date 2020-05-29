@@ -41,7 +41,7 @@ To use, test, improve or develop this project, you must:
 
 ---
 
-### Did you enjoyed the minifier? Help us raise these numbers up 🥰 🎉
+### Do you enjoy the minifier? Help us raise these numbers up 🥰 🎉
 
 [![Github followers](https://img.shields.io/github/followers/Josee9988.svg?style=social)](#did-you-enjoyed-the-minifier-help-us-raise-these-numbers-up--)
 [![Github stars](https://img.shields.io/github/stars/Josee9988/MinifyAllWeb.svg?style=social)](#did-you-enjoyed-the-minifier-help-us-raise-these-numbers-up--)
