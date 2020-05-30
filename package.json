@@ -19,7 +19,7 @@
     "firebase:deploy": "ng deploy",
     "firebase:deploy:preview": "ng deploy --preview",
     "firebase:deploy:disable": "firebase hosting:disable --project minifyallweb",
-    "webdriver:update": "webdriver-manager clean && webdriver-manager update"
+    "webdriver:update": "webdriver-manager clean && webdriver-manager update && webdriver-manager update --versions.chrome 83.0.4103.39"
   },
   "author": {
     "name": "Jose Gracia",
