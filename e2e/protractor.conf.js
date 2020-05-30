@@ -13,7 +13,11 @@ exports.config = {
     './src/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    browserName: 'chrome'
+    browserName: 'chrome',
+    chromeOptions: { // make chrome headless to allow CI testing to work
+      binary: process.env.CHROME_BIN,
+      args: ['--headless', '--no-sandbox', "--disable-gpu", "--window-size=800x600"]
+    }
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',

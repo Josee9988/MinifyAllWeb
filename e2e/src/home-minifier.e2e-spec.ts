@@ -1,16 +1,17 @@
 import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
+import {environment} from "../../src/environments/environment";
 
-describe('workspace-project App', () => {
+describe('Home minifier \'/\' default route', () => {
   let page: AppPage;
 
   beforeEach(() => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display h1 tag with the name and the domain url', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('MinifyAll app is running!');
+    expect(page.getH1TitleText()).toEqual('MinifyAll - '+environment.domainUrl);
   });
 
   afterEach(async () => {
