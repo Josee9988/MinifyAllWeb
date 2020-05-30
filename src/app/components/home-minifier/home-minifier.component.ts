@@ -22,7 +22,7 @@ export class HomeMinifier extends Forms implements OnInit {
   minifiedCode = '';
   isProcessing = false;
   domainUrl: string = environment.domainUrl;
-  isHexMinifierEnabled: boolean;
+  isHexMinifierEnabled = false;
   nonMinifiedCode: FormControl;
   languages: ILanguagesInterface[] = [
     {value: 0, viewValue: 'Auto detect on paste', faIcon: 'fas fa-magic'},
@@ -137,5 +137,9 @@ export class HomeMinifier extends Forms implements OnInit {
           'Unexpected error while minifying. Please tell us how this happened!', SnackbarTypeEnum.error);
         break;
     }
+  }
+
+  test() {
+    console.log(this.isHexMinifierEnabled)
   }
 }
