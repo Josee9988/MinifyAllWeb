@@ -43,26 +43,32 @@ describe('Home minifier \'/\' default route', () => {
     expect(minifyMainButton).not.toContain('text');
   });
 
-  it('should minify as expected with color minimization enabled and disabled', () => {
+  it('should minify as expected with color minimization disabled', () => {
     const codeToBeMinified = '.myClass {\nbackground-color: rgba(12, 12, 12, 0.8);\nbackground-color: rgb(12, 12, 12);\nbackground-color: #FAFAFA;\n/*other comment*/\ncontent: url("https://github.com/Josee9988/MinifyAll");\nmargin-right: 0px;\n}/* my comment\n*/';
     const codeMinifiedHexDisabled = '.myClass{background-color:rgba(12,12,12,.8);background-color:rgb(12,12,12);background-color:#FAFAFA;content:url("https://github.com/Josee9988/MinifyAll");margin-right:0;}';
-    const codeMinifiedHexEnabled = '.myClass{background-color:#0C0C0CCC;background-color:#111;background-color:#FFF;content:url("https://github.com/Josee9988/MinifyAll");margin-right:0;}';
 
     const initialCode = browser.findElement(by.id('initialCode'));
     initialCode.sendKeys(codeToBeMinified);
     browser.actions().mouseMove(element(by.id('submitButton'))).click().perform();
-
     const codeResult = browser.findElement(by.id('codeResult')).getAttribute('value');
     const initialCode2 = browser.findElement(by.id('initialCode')).getAttribute('value');
+
     expect(initialCode2).toEqual(codeToBeMinified);
     expect(codeResult).toEqual(codeMinifiedHexDisabled);
+  });
+
+  it('should minify as expected with color minimization enabled', () => {
+    const codeToBeMinified = '.myClass {\nbackground-color: rgba(12, 12, 12, 0.8);\nbackground-color: rgb(12, 12, 12);\nbackground-color: #FAFAFA;\n/*other comment*/\ncontent: url("https://github.com/Josee9988/MinifyAll");\nmargin-right: 0px;\n}/* my comment\n*/';
+    const codeMinifiedHexEnabled = '.myClass{background-color:#0C0C0CCC;background-color:#111;background-color:#FFF;content:url("https://github.com/Josee9988/MinifyAll");margin-right:0;}';
+
+    const initialCode = browser.findElement(by.id('initialCode'));
+    initialCode.sendKeys(codeToBeMinified);
 
     browser.actions().mouseMove(element(by.id('mat-slide-toggle-1'))).click().perform();
     browser.actions().mouseMove(element(by.id('submitButton'))).click().perform();
 
     const codeResultHexEnabled = browser.findElement(by.id('codeResult')).getAttribute('value');
     expect(codeResultHexEnabled).toEqual(codeMinifiedHexEnabled);
-
   });
 
   afterEach(async () => {

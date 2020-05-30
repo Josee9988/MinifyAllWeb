@@ -12,12 +12,4 @@ export class AppPage {
   getElementAttributeByCss(css: string, attribute: string) {
     return element(by.css(css)).getAttribute(attribute) as Promise<string>;
   }
-
-  getElementById(id: string) {
-    return element(by.id(id)) as unknown as Promise<any>;
-  }
-
-  clickButton(id: string) {
-    browser.actions().mouseMove(element(by.id(id))).click();
-  }
 }

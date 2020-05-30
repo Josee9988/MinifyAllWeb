@@ -1,5 +1,5 @@
-import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import {AppPage} from './app.po';
+import {browser, logging} from 'protractor';
 
 describe('Changelog route \'/info\' route', () => {
   let page: AppPage;
