@@ -18,7 +18,8 @@
     "prerender": "ng run MinifyAll:prerender",
     "firebase:deploy": "ng deploy",
     "firebase:deploy:preview": "ng deploy --preview",
-    "firebase:deploy:disable": "firebase hosting:disable --project minifyallweb"
+    "firebase:deploy:disable": "firebase hosting:disable --project minifyallweb",
+    "webdriver:update": "webdriver-manager clean && webdriver-manager update"
   },
   "author": {
     "name": "Jose Gracia",
@@ -101,6 +102,7 @@
     "protractor": "^7.0.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.8.3"
+    "typescript": "~3.8.3",
+    "webdriver-manager": "^12.1.7"
   }
 }
