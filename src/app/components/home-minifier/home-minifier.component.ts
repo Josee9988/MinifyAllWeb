@@ -10,6 +10,7 @@ import {LanguagesEnum} from '../../shared/enums/Languages.enum';
 import {MinifyAllClass} from '@josee9988/minifyall';
 import * as Terser from "terser";
 import {Meta, Title} from "@angular/platform-browser";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-home-component',
@@ -20,6 +21,7 @@ export class HomeMinifier extends Forms implements OnInit {
   languageSelected = 0;
   minifiedCode = '';
   isProcessing = false;
+  domainUrl: string = environment.domainUrl;
   isHexMinifierEnabled: boolean;
   nonMinifiedCode: FormControl;
   languages: ILanguagesInterface[] = [
