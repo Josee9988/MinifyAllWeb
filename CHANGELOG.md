@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.5.0**] - 2020-05-29
+
+### Added
+
+* e2e tests for the main page.
+* CI github workflow to test the e2e tests.
+* Code minimizes automatically on minify colors toggle.
+* Updated the main h1 title to contain the same title as the page.
+
 ## [**1.4.2**] - 2020-05-29
 
 ### Changed

@@ -1,4 +1,4 @@
-<h1 class="text-center">MinifyAll online</h1>
+<h1 class="text-center">MinifyAll - {{domainUrl}}</h1>
 <h2 class="text-center">MinifyAll is a tool that will minify your code to make it lighter <em
   class="fas fa-feather-alt"></em></h2>
 <br>
@@ -18,7 +18,7 @@
     </mat-form-field>
 
     <div class="col-md-3 vertical-aligned">
-      <mat-slide-toggle [(ngModel)]="isHexMinifierEnabled" color="warn"
+      <mat-slide-toggle  color="warn" (toggleChange)="isHexMinifierEnabled = !isHexMinifierEnabled; onSubmit(true)"
                         matTooltip="If the script should minify hexadecimal values or not (some colors may actually change a bit)">
         <em [ngClass]="{'pallete-colored': isHexMinifierEnabled}" class="fas fa-palette"></em> Minify colors
       </mat-slide-toggle>
@@ -78,7 +78,7 @@
 
   <!-- Submit button -->
   <div class="full-width hvr-hang">
-    <button (click)="onSubmit()" class="full-width" color="primary" mat-raised-button
+    <button id="submitButton" (click)="onSubmit()" class="full-width" color="primary" mat-raised-button
             matTooltip="Minify your code"><em class="fas fa-compress-alt"></em>
       Minify {{getLanguageFromSelected().value !== 0 ? getLanguageFromSelected().viewValue : ''}} code
     </button>

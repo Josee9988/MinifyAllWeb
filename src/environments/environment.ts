@@ -5,9 +5,13 @@
 export const environment = {
   production: false,
   /**
-   * The url of the web.
+   * The full url of the web.
    */
-  url: 'https://minifyall.jgracia.es/'
+  url: 'https://minifyall.jgracia.es/',
+  /**
+   * The url of the web, but without any slash nor the http/s.
+   */
+  domainUrl: 'minifyall.jgracia.es',
 };
 
 /*
