@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [Unreleased]
+
+### Added
+
+* e2e tests for the main page.
+* CI github workflow to test the e2e tests.
+* Updated the main h1 title to contain the same title as the page.
+
 ## [**1.4.2**] - 2020-05-29
 
 ### Changed
