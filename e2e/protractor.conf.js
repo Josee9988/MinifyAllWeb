@@ -15,7 +15,7 @@ exports.config = {
   capabilities: {
     browserName: 'chrome',
     chromeOptions: { // make chrome headless to allow CI testing to work
-      binary: process.env.CHROME_BIN,
+      binary: require('puppeteer').executablePath(),
       args: ['--headless', '--no-sandbox', "--disable-gpu", "--window-size=800x600"]
     }
   },
