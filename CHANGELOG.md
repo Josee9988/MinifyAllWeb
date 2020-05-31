@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.5.1**] - 2020-05-31
+
+* Information/changelog pages now show a loading text until the content is fully loaded.
+
 ## [**1.5.0**] - 2020-05-29
 
 ### Added

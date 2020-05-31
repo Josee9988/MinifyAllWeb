@@ -1,7 +1,7 @@
 {
   "name": "minifyallweb",
   "description": "Online code minifier for HTML, CSS, JSON and JS",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
