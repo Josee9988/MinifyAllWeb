@@ -33,6 +33,27 @@ describe('Home minifier \'/\' default route', () => {
     expect(h2Tag).toContain('minify your code');
   });
 
+  it('should display h3 tag with the page description', () => {
+    const h3Tag = page.getElementTextByTagName('app-root app-home-component app-description #main-description h3');
+    const wholeDescription = page.getElementTextByTagName('app-root app-home-component app-description #main-description');
+    expect(h3Tag).toEqual('What is MinifyAll?');
+
+    expect(wholeDescription).toContain('MinifyAllWeb');
+    expect(wholeDescription).toContain('VSCode');
+    expect(wholeDescription).toContain('terminal');
+    expect(wholeDescription).toContain('package');
+    expect(wholeDescription).toContain('@Josee9988');
+    expect(wholeDescription).toContain('Jose Gracia');
+    expect(wholeDescription).toContain('CSS');
+    expect(wholeDescription).toContain('HTML');
+    expect(wholeDescription).toContain('JSON');
+    expect(wholeDescription).toContain('JSON-C');
+    expect(wholeDescription).toContain('open source');
+    expect(wholeDescription).toContain('regex');
+    expect(wholeDescription).toContain('TypeScript');
+    expect(wholeDescription).toContain('Terser');
+  });
+
   it('should display main button with the expected text', () => {
     const minifyMainButton = page.getElementTextByTagName('app-root app-home-component .mat-raised-button');
     expect(minifyMainButton).toContain('Minify code');
