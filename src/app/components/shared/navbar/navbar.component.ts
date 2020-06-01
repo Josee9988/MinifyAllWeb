@@ -13,7 +13,7 @@ import {LocalFilesService} from '../../../shared/services/local-files.service';
 })
 export class NavbarComponent implements OnInit {
   navbarLinks: Array<INavbarLinks>;
-  appName: string;
+  version: string;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(
     '(max-width: 859.99px) and (orientation: portrait), ' +
@@ -28,7 +28,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.localFilesService.getPackage().subscribe(Response => {
-      this.appName = 'MinifyAll v' + Response.version;
+      this.version = '' + Response.version;
     });
     this.declareNavbarElements();
   }
