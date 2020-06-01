@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.6.0**] - 2020-05-31
+
+### Added
+
+* Description of MinifyAll in the main page.
+* e2e tests for the new description component in the main page.
+* Schema.org markup in the index.html file.
+
 ## [**1.5.1**] - 2020-05-31
 
 * Information/changelog pages now show a loading text until the content is fully loaded.
