@@ -5,7 +5,7 @@
                fixedInViewport>
     <mat-toolbar class="hvr-hang" color="primary">
       <img alt="logo" class="logo-header" routerLink="/"
-           routerLinkActive="active" src="../../../../assets/logo.webp">{{appName}}
+           routerLinkActive="active" src="../../../../assets/logo.webp">MinifyAll v{{version}}
     </mat-toolbar>
     <mat-nav-list>
       <h2 matSubheader>Elementos de navegación</h2>
@@ -35,7 +35,7 @@
       <span class="minium-header-pads">
         <a title="Main page" class="hvr-pop" routerLink="/" routerLinkActive="active">
           <img alt="logo" class="logo-header-white" src="../../../../assets/logo.webp"><span
-          class="main-navbar-text">{{appName}}</span>
+          class="main-navbar-text">MinifyAll v{{version}}</span>
         </a>
       </span>
 
@@ -53,10 +53,6 @@
           </a>
         </div>
       </div>
-
-      <div class="hvr-bounce-in top-navbar-item">
-      </div>
-
     </mat-toolbar>
     <!-- Content -->
     <ng-content></ng-content>
