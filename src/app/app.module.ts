@@ -25,13 +25,15 @@ import {HomeMinifier} from "./components/home-minifier/home-minifier.component";
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from '../environments/environment';
 import {SharedModuleModule} from "./shared-module.module";
+import {DescriptionComponent} from './components/home-minifier/description/description.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeMinifier
+    HomeMinifier,
+    DescriptionComponent
   ],
   imports: [
     SharedModuleModule,
