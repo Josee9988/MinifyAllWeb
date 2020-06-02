@@ -1,5 +1,6 @@
 import {AppPage} from './app.po';
 import {browser, logging} from 'protractor';
+import {environment} from "../../src/environments/environment";
 
 describe('Changelog route \'/info\' route', () => {
   let page: AppPage;
@@ -7,6 +8,11 @@ describe('Changelog route \'/info\' route', () => {
   beforeEach(() => {
     page = new AppPage();
     page.navigateTo('/info');
+  });
+
+  it('should have the expected title', () => {
+    expect(browser.getTitle()).toEqual('MinifyAll information - ' + environment.domainUrl);
+    expect(browser.getTitle()).toContain('minifyall.');
   });
 
   it('should have the expected h1 tag', () => {
