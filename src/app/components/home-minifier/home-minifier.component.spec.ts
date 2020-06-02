@@ -1,6 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {HomeMinifier} from './home-minifier.component';
+import {AppModule} from "../../app.module";
 
 describe('HomeMinifier', () => {
   let component: HomeMinifier;
@@ -8,6 +9,7 @@ describe('HomeMinifier', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [AppModule],
       declarations: [HomeMinifier]
     })
       .compileComponents();

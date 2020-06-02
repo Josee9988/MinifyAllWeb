@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.6.1**] - 2020-06-02
+
+### Added
+
+* Some basic karma (unit tests).
+* e2e tests for the SEO service working.
+* Github CI workflow now run the unit tests.
+
+### Fixed
+
+* Seo service is now updating the title on demand.
+
 ## [**1.6.0**] - 2020-05-31
 
 ### Added

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Meta} from "@angular/platform-browser";
+import {Meta, Title} from "@angular/platform-browser";
 import {environment} from "../../../environments/environment";
 import {GenerateSeoTagConfig} from "../interfaces/generate-seo-tag-config";
 
@@ -8,7 +8,7 @@ import {GenerateSeoTagConfig} from "../interfaces/generate-seo-tag-config";
 })
 export class SeoService {
 
-  constructor(private meta: Meta) {
+  constructor(private meta: Meta, private title: Title) {
   }
 
   generateTags(config?: GenerateSeoTagConfig) {
@@ -20,6 +20,7 @@ export class SeoService {
     };
 
     // update the tags with the current values
+    this.title.setTitle(config.title);
     this.meta.updateTag({name: 'twitter:title', content: config.title});
     this.meta.updateTag({name: 'twitter:description', content: config.description});
     this.meta.updateTag({property: 'og:title', content: config.title});
