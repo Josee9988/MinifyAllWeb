@@ -25,7 +25,7 @@ export class HomeMinifier extends Forms implements OnInit {
   isHexMinifierEnabled = false;
   nonMinifiedCode: FormControl;
   languages: ILanguagesInterface[] = [
-    {value: 0, viewValue: 'Auto detect on paste', faIcon: 'fas fa-magic'},
+    {value: 0, viewValue: 'Auto-detect on paste', faIcon: 'fas fa-magic'},
     {value: 1, viewValue: 'HTML', faIcon: 'fab fa-html5'},
     {value: 2, viewValue: 'CSS', faIcon: 'fab fa-css3-alt'},
     {value: 3, viewValue: 'JSON/JSONC', faIcon: 'fas fa-code'},
@@ -51,7 +51,7 @@ export class HomeMinifier extends Forms implements OnInit {
   onSubmit(isSilent = false) {
     if (this.validateInputs()) { // inputs are OK
       this.isProcessing = true;
-      if (this.languageSelected === 0) { // AUTO DETECT LANGUAGE
+      if (this.languageSelected === 0) { // AUTO-DETECT LANGUAGE
         this.autoDetectCode();
       }
       this.nonMinifiedCode.setValue(this.nonMinifiedCode.value.trim()); // trim code
@@ -63,7 +63,7 @@ export class HomeMinifier extends Forms implements OnInit {
   }
 
   /**
-   * Summary: auto detects the language.
+   * Summary: auto-detects the language.
    * @param $event the paste event.
    */
   autoDetectCode($event: any = null): void {

@@ -33,7 +33,7 @@ To use, test, improve or develop this project, you must:
 
 ## **Built with**
 
-- [WebStorm](https://www.jetbrains.com/webstorm/)
+- [WebStorm](https://www.jetbrains.com/webstorm/) as the main IDE.
 * [Github](https://github.com/Josee9988) (also as a web host)
 * [Angular CLI](https://github.com/angular/angular-cli) version 8.3.25.
 * [Angular material](https://material.angular.io/)
@@ -52,6 +52,6 @@ To use, test, improve or develop this project, you must:
 
 ---
 
-> ⚠️Remember that this tool does not guarantee a 100% effectiveness and may have some issue at some point. Use it at your own risk and always do backups of your code.⚠️
+> ⚠️ Remember that this tool does not guarantee a 100% effectiveness and may have some issue at some point. Use it at your own risk and always do backups of your code. ⚠️
 
 _Made with a lot of ❤️❤️ by **[@Josee9988](https://github.com/Josee9988)**_

@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.6.2**] - 2020-06-15
+
+### Fixed
+
+* Some minor typos.
+
 ## [**1.6.1**] - 2020-06-02
 
 ### Added
@@ -22,7 +28,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ### Added
 
-* Description of MinifyAll in the main page.
+* Description of MinifyAll on the main page.
 * e2e tests for the new description component in the main page.
 * Schema.org markup in the index.html file.
 
@@ -35,8 +41,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 ### Added
 
 * e2e tests for the main page.
-* CI github workflow to test the e2e tests.
-* Code minimizes automatically on minify colors toggle.
+* CI GitHub workflow to test the e2e tests.
+* Code minimizes automatically on minify colours toggle.
 * Updated the main h1 title to contain the same title as the page.
 
 ## [**1.4.2**] - 2020-05-29
@@ -47,8 +53,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ### Fixed
 
-* SEO problem with the cache (now the images and css/js resources are highly time cached).
-* SEO canonical url will not add a duplicate entry. (ignored firebase hosting domains).
+* SEO problem with the cache (now the images and CSS/js resources are highly time cached).
+* SEO canonical URL will not add a duplicate entry. (ignored firebase hosting domains).
 
 ## [**1.4.1**] - 2020-05-29
 
@@ -56,14 +62,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 * Page occupying more than 100% width.
 * Markdown routes (information and changelog) importing from global styles.
-* Minnor typo in the readm.md.
+* Minor typo in the readm.md.
 
 ## [**1.4.0**] - 2020-05-28
 
 ### Added
 
 * App using Firebase hosting to use angular universal SSR to improve app render performance.
-* "a" tags with title.
+* "a" tags with a title.
 * Canonical link on page refresh.
 * SEOService to update meta tags on every route.
 * Config for the routes to scroll back on top smoothly.
@@ -76,9 +82,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ### Added
 
-* Meta preconnect tag to Fontawesome, fonts.gstatic and google analytics.
+* Meta pre-connect tag to Fontawesome, fonts.gstatic and google analytics.
 * Added angular SSR (not in use yet but it is prepared).
-* Ngcc postinstall.
+* Ngcc post-install.
 
 ## [**1.3.1**] - 2020-05-22
 
@@ -105,7 +111,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 * Angular lazy loading.
 * Angular preload.
 * Meta tag for caching the data by 7 days.
-* Noscript tag in the index.html to warn the user if he doesn't have JS enabled.
+* NoScript tag in the index.html to warn the user if he doesn't have JS enabled.
 
 ### Changed
 
@@ -125,7 +131,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ### Added
 
-* Some minnor SEO improvements such as each page using a specific title and meta description.
+* Some minor SEO improvements such as each page using a specific title and meta description.
 
 ### Changed
 
@@ -146,7 +152,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ### Changed
 
-* Link to buy me a coffee from paypal to https://www.buymeacoffee.com/josee9988
+* Link to buy me a coffee from PayPal to https://www.buymeacoffee.com/josee9988
 
 ### Removed
 
@@ -162,7 +168,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ### Added
 
-* Meta tags to support twitter, facebook and more.
+* Meta tags to support twitter, Facebook and more.
 * General SEO improvements.
 
 ## [**1.1.6**] - 2020-04-10
