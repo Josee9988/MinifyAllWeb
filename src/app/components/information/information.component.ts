@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {MarkdownParserService} from '../../shared/services/markdown-parser.service';
 import {LocalFilesService} from '../../shared/services/local-files.service';
-import {SeoService} from "../../shared/services/seo.service";
-import {environment} from "../../../environments/environment";
+import {SeoService} from '../../shared/services/seo.service';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-information',

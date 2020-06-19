@@ -1,7 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {ChangelogComponent} from './changelog.component';
-import {AppModule} from "../../app.module";
+import {AppModule} from '../../app.module';
 
 describe('ChangelogComponent', () => {
   let component: ChangelogComponent;

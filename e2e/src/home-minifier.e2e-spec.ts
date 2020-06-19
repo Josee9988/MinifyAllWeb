@@ -1,6 +1,6 @@
 import {AppPage} from './app.po';
 import {browser, by, element, logging} from 'protractor';
-import {environment} from "../../src/environments/environment";
+import {environment} from '../../src/environments/environment';
 
 describe('Home minifier \'/\' default route', () => {
   let page: AppPage;
@@ -16,7 +16,8 @@ describe('Home minifier \'/\' default route', () => {
   });
 
   it('should have the expected canonical url tag', () => {
-    expect(page.getElementAttributeByCss("link[rel='canonical']", 'href')).toContain(environment.production ? environment.url : 'localhost');
+    expect(page.getElementAttributeByCss('link[rel=\'canonical\']', 'href')).toContain(
+      environment.production ? environment.url : 'localhost');
   });
 
   it('should display h1 tag with the name and the domain url', () => {
@@ -33,17 +34,19 @@ describe('Home minifier \'/\' default route', () => {
     expect(h2Tag).toContain('minify your code');
   });
 
-  it('should display h3 tag with the page description', () => {
+  it('should display h3 tag with the right name', () => {
     const h3Tag = page.getElementTextByTagName('app-root app-home-component app-description #main-description h3');
-    const wholeDescription = page.getElementTextByTagName('app-root app-home-component app-description #main-description');
     expect(h3Tag).toEqual('What is MinifyAll?');
+  });
 
+  it('should display the page description', () => {
+    const wholeDescription = page.getElementTextByTagName('app-root app-home-component app-description');
     expect(wholeDescription).toContain('MinifyAllWeb');
     expect(wholeDescription).toContain('VSCode');
     expect(wholeDescription).toContain('terminal');
     expect(wholeDescription).toContain('package');
     expect(wholeDescription).toContain('@Josee9988');
-    expect(wholeDescription).toContain('Jose Gracia');
+    expect(wholeDescription).toContain('jgracia');
     expect(wholeDescription).toContain('CSS');
     expect(wholeDescription).toContain('HTML');
     expect(wholeDescription).toContain('JSON');
@@ -52,6 +55,7 @@ describe('Home minifier \'/\' default route', () => {
     expect(wholeDescription).toContain('regex');
     expect(wholeDescription).toContain('TypeScript');
     expect(wholeDescription).toContain('Terser');
+    expect(wholeDescription).toContain('buy me a coffee');
   });
 
   it('should display main button with the expected text', () => {
@@ -65,7 +69,9 @@ describe('Home minifier \'/\' default route', () => {
   });
 
   it('should minify as expected with color minimization disabled', () => {
+    // tslint:disable-next-line:max-line-length
     const codeToBeMinified = '.myClass {\nbackground-color: rgba(12, 12, 12, 0.8);\nbackground-color: rgb(12, 12, 12);\nbackground-color: #FAFAFA;\n/*other comment*/\ncontent: url("https://github.com/Josee9988/MinifyAll");\nmargin-right: 0px;\n}/* my comment\n*/';
+    // tslint:disable-next-line:max-line-length
     const codeMinifiedHexDisabled = '.myClass{background-color:rgba(12,12,12,.8);background-color:rgb(12,12,12);background-color:#FAFAFA;content:url("https://github.com/Josee9988/MinifyAll");margin-right:0;}';
 
     const initialCode = browser.findElement(by.id('initialCode'));
@@ -79,7 +85,9 @@ describe('Home minifier \'/\' default route', () => {
   });
 
   it('should minify as expected with color minimization enabled', () => {
+    // tslint:disable-next-line:max-line-length
     const codeToBeMinified = '.myClass {\nbackground-color: rgba(12, 12, 12, 0.8);\nbackground-color: rgb(12, 12, 12);\nbackground-color: #FAFAFA;\n/*other comment*/\ncontent: url("https://github.com/Josee9988/MinifyAll");\nmargin-right: 0px;\n}/* my comment\n*/';
+    // tslint:disable-next-line:max-line-length
     const codeMinifiedHexEnabled = '.myClass{background-color:#0C0C0CCC;background-color:#111;background-color:#FFF;content:url("https://github.com/Josee9988/MinifyAll");margin-right:0;}';
 
     const initialCode = browser.findElement(by.id('initialCode'));

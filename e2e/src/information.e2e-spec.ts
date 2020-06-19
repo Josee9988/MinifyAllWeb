@@ -1,6 +1,6 @@
 import {AppPage} from './app.po';
 import {browser, logging} from 'protractor';
-import {environment} from "../../src/environments/environment";
+import {environment} from '../../src/environments/environment';
 
 describe('Changelog route \'/info\' route', () => {
   let page: AppPage;
@@ -20,7 +20,8 @@ describe('Changelog route \'/info\' route', () => {
   });
 
   it('should have the a little description of the package', () => {
-    expect(page.getElementTextByTagName('app-root app-information p:nth-child(2)')).toEqual('An online tool to minify your web code, you will love its simplicity!');
+    expect(page.getElementTextByTagName('app-root app-information p:nth-child(2)')).toEqual(
+      'An online tool to minify your web code, you will love its simplicity!');
   });
 
   afterEach(async () => {

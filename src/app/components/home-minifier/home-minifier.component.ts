@@ -8,9 +8,9 @@ import {CopyClipboardService} from '../../shared/services/copy-clipboard.service
 import {DetectLanguageService} from '../../shared/services/detect-language.service';
 import {LanguagesEnum} from '../../shared/enums/Languages.enum';
 import {MinifyAllClass} from '@josee9988/minifyall';
-import * as Terser from "terser";
-import {Meta, Title} from "@angular/platform-browser";
-import {environment} from "../../../environments/environment";
+import * as Terser from 'terser';
+import {Meta, Title} from '@angular/platform-browser';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-home-component',
@@ -43,7 +43,7 @@ export class HomeMinifier extends Forms implements OnInit {
 
   ngOnInit() {
     this.title.setTitle('MinifyAll - minifyall.jgracia.es');
-    this.meta.updateTag({name: 'Online code minifier for CSS, JSON, JSONC and JavaScript. Minify instantly your programming code simple, smooth and fast!'})
+    this.meta.updateTag({name: 'Online code minifier for CSS, JSON, JSONC and JavaScript. Minify instantly your programming code simple, smooth and fast!'});
     this.nonMinifiedCode = new FormControl('', [Validators.required, Validators.minLength(5)]);
     this.inputs = [this.nonMinifiedCode];
   }
@@ -108,6 +108,10 @@ export class HomeMinifier extends Forms implements OnInit {
     return this.languages.find((language) => language.value === this.languageSelected);
   }
 
+  test() {
+    console.log(this.isHexMinifierEnabled);
+  }
+
   /**
    * Summary: initialises the Global minifier class and calls the right method.
    * @param source the given code to be minified as an array of strings (each element in the array refeers to one line)
@@ -137,9 +141,5 @@ export class HomeMinifier extends Forms implements OnInit {
           'Unexpected error while minifying. Please tell us how this happened!', SnackbarTypeEnum.error);
         break;
     }
-  }
-
-  test() {
-    console.log(this.isHexMinifierEnabled)
   }
 }
