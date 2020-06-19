@@ -17,7 +17,7 @@ import {environment} from '../../../environments/environment';
   templateUrl: './home-minifier.component.html',
   styleUrls: ['./home-minifier.component.scss']
 })
-export class HomeMinifier extends Forms implements OnInit {
+export class HomeMinifierComponent extends Forms implements OnInit {
   languageSelected = 0;
   minifiedCode = '';
   isProcessing = false;
@@ -43,7 +43,10 @@ export class HomeMinifier extends Forms implements OnInit {
 
   ngOnInit() {
     this.title.setTitle('MinifyAll - minifyall.jgracia.es');
-    this.meta.updateTag({name: 'Online code minifier for CSS, JSON, JSONC and JavaScript. Minify instantly your programming code simple, smooth and fast!'});
+    this.meta.updateTag({
+      name:
+        'Online code minifier for CSS, JSON, JSONC and JavaScript. Minify instantly your programming code simple, smooth and fast!'
+    });
     this.nonMinifiedCode = new FormControl('', [Validators.required, Validators.minLength(5)]);
     this.inputs = [this.nonMinifiedCode];
   }

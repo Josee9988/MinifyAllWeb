@@ -28,6 +28,7 @@ describe('ChangelogComponent', () => {
   it('should render loading text', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('main').textContent).toContain('Loading the changelog for you, this might take up to a couple of seconds.');
+    expect(compiled.querySelector('main').textContent).toContain(
+      'Loading the changelog for you, this might take up to a couple of seconds.');
   });
 });

@@ -47,7 +47,17 @@ jobs:
       - name: Lint Code Base
         uses: github/super-linter@v2.0.0
         env:
-          VALIDATE_ALL_CODEBASE: true
+          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_PYTHON: false
+          VALIDATE_PERL: false
+          VALIDATE_COFFEE: false
+          VALIDATE_RUBY: false
+          VALIDATE_ANSIBLE: false
+          VALIDATE_JAVASCRIPT_ES: false
+          VALIDATE_JAVASCRIPT_STANDARD: false
+          VALIDATE_TYPESCRIPT_STANDARD: false
+          VALIDATE_GO: false
+          VALIDATE_TERRAFORM: false
 
       #######################################
       # Run tslint Linter against code base #

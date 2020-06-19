@@ -14,7 +14,8 @@ export class SeoService {
   generateTags(config?: GenerateSeoTagConfig) {
     config = { // load the config
       title: 'MinifyAllWeb minify CSS, JSON and JS - minifyall.jgracia.es',
-      description: 'Online code minifier for CSS, JSON, JSONC and JavaScript. Minify instantly your programming code simple, smooth and fast!',
+      description:
+        'Online code minifier for CSS, JSON, JSONC and JavaScript. Minify instantly your programming code simple, smooth and fast!',
       slug: '',
       ...config
     };

@@ -1,6 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer (click)="drawer.toggle()" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-               [mode]="(isHandset$ | async) ? 'over' : 'side'" [ngClass]="{hidden: !(isHandset$ | async) === true}"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'" [ngClass]="{hidden: (isHandset$ | async) === false}"
                [opened]="(isHandset$ | async) === false" class="sidenav"
                fixedInViewport>
     <mat-toolbar class="hvr-hang" color="primary">
