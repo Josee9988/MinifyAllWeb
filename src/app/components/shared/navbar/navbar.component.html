@@ -1,6 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer (click)="drawer.toggle()" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-               [mode]="(isHandset$ | async) ? 'over' : 'side'" [ngClass]="{hidden: !(isHandset$ | async) === true}"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'" [ngClass]="{hidden: (isHandset$ | async) === false}"
                [opened]="(isHandset$ | async) === false" class="sidenav"
                fixedInViewport>
     <mat-toolbar class="hvr-hang" color="primary">
@@ -12,14 +12,16 @@
       <ul>
         <li *ngFor="let item of navbarLinks">
 
-          <a title="{{item.field}}" *ngIf="!item.externalLink" [routerLink]="item.route" class="hvr-bounce-in" mat-list-item
-             routerLinkActive="active">
+          <a *ngIf="!item.externalLink" [routerLink]="item.route" class="hvr-bounce-in" mat-list-item
+             routerLinkActive="active"
+             title="{{item.field}}">
             <em class="{{item.icon}} icon"></em> {{item.field}}
           </a>
 
           <!-- If with external link -->
-          <a title="{{item.field}}" *ngIf="item.externalLink" class="hvr-bounce-in" href="{{ item.externalLink }}" mat-list-item
-             routerLinkActive="active">
+          <a *ngIf="item.externalLink" class="hvr-bounce-in" href="{{ item.externalLink }}" mat-list-item
+             routerLinkActive="active"
+             title="{{item.field}}">
             <em class="{{item.icon}} icon"></em> {{item.field}}
           </a>
 
@@ -33,7 +35,7 @@
         <em aria-label="Side nav toggle icon" class="fas fa-bars"></em>
       </button>
       <span class="minium-header-pads">
-        <a title="Main page" class="hvr-pop" routerLink="/" routerLinkActive="active">
+        <a class="hvr-pop" routerLink="/" routerLinkActive="active" title="Main page">
           <img alt="logo" class="logo-header-white" src="../../../../assets/logo.webp"><span
           class="main-navbar-text">MinifyAll v{{version}}</span>
         </a>
@@ -41,14 +43,16 @@
 
       <span class="fill-space"></span>
       <div *ngFor="let item of navbarLinks" class="hvr-bounce-in">
-        <a title="{{item.field}}" *ngIf="!item.externalLink" [routerLink]="item.route" class="top-navbar-item" mat-button
-                routerLinkActive="active">
+        <a *ngIf="!item.externalLink" [routerLink]="item.route" class="top-navbar-item" mat-button
+           routerLinkActive="active"
+           title="{{item.field}}">
           <em class="{{item.icon}}"></em> {{item.field}}
         </a>
 
         <!-- If with external link -->
         <div class="external-link hvr-bounce-in">
-          <a title="{{item.field}}" href="{{item.externalLink}}" *ngIf="item.externalLink" class="top-navbar-item" mat-button>
+          <a *ngIf="item.externalLink" class="top-navbar-item" href="{{item.externalLink}}" mat-button
+             title="{{item.field}}">
             <em class="{{item.icon}}"></em> {{item.field}}
           </a>
         </div>

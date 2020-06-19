@@ -1,7 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {DescriptionComponent} from './description.component';
-import {AppModule} from "../../../app.module";
+import {AppModule} from '../../../app.module';
 
 describe('DescriptionComponent', () => {
   let component: DescriptionComponent;
@@ -12,7 +12,7 @@ describe('DescriptionComponent', () => {
       imports: [AppModule],
       declarations: [DescriptionComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

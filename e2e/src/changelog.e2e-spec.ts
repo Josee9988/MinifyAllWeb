@@ -1,6 +1,6 @@
 import {AppPage} from './app.po';
 import {browser, logging} from 'protractor';
-import {environment} from "../../src/environments/environment";
+import {environment} from '../../src/environments/environment';
 
 describe('Changelog route \'/changelog\' route', () => {
   let page: AppPage;
@@ -20,8 +20,10 @@ describe('Changelog route \'/changelog\' route', () => {
   });
 
   it('should have the description of the purpose of the changelog', () => {
-    expect(page.getElementTextByTagName('app-root app-changelog p:nth-child(2)')).toEqual('All notable changes to the "MinifyAll online" tool will be documented in this file.');
-    expect(page.getElementTextByTagName('app-root app-changelog p:nth-child(3)')).toEqual('The format is based on Keep a Changelog and this project adheres to Semantic Versioning.');
+    expect(page.getElementTextByTagName('app-root app-changelog p:nth-child(2)')).toEqual(
+      'All notable changes to the "MinifyAll online" tool will be documented in this file.');
+    expect(page.getElementTextByTagName('app-root app-changelog p:nth-child(3)')).toEqual(
+      'The format is based on Keep a Changelog and this project adheres to Semantic Versioning.');
   });
 
   afterEach(async () => {

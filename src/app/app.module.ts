@@ -21,10 +21,10 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {Mugan86GoogleAnalyticsModule} from 'mugan86-ng-google-analytics';
-import {HomeMinifier} from "./components/home-minifier/home-minifier.component";
+import {HomeMinifierComponent} from './components/home-minifier/home-minifier.component';
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from '../environments/environment';
-import {SharedModuleModule} from "./shared-module.module";
+import {SharedModuleModule} from './shared-module.module';
 import {DescriptionComponent} from './components/home-minifier/description/description.component';
 
 
@@ -32,12 +32,12 @@ import {DescriptionComponent} from './components/home-minifier/description/descr
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeMinifier,
+    HomeMinifierComponent,
     DescriptionComponent
   ],
   imports: [
     SharedModuleModule,
-    BrowserModule.withServerTransition({ appId: 'MinifyAll' }),
+    BrowserModule.withServerTransition({appId: 'MinifyAll'}),
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,

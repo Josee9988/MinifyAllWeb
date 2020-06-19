@@ -11,7 +11,7 @@ export class CanonicalService {
   }
 
   setCanonicalURL(url?: string): void {
-    const canURL = url == undefined ? this.dom.URL : url;
+    const canURL = url === undefined ? this.dom.URL : url;
     // only if it is not a firebase url
     if (!canURL.includes('cloud') || !canURL.includes('functions') || !canURL.includes('us-central')) {
       const link: HTMLLinkElement = this.dom.createElement('link');

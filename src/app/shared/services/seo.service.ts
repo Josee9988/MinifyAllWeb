@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Meta, Title} from "@angular/platform-browser";
-import {environment} from "../../../environments/environment";
-import {GenerateSeoTagConfig} from "../interfaces/generate-seo-tag-config";
+import {Meta, Title} from '@angular/platform-browser';
+import {environment} from '../../../environments/environment';
+import {GenerateSeoTagConfig} from '../interfaces/generate-seo-tag-config';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,8 @@ export class SeoService {
   generateTags(config?: GenerateSeoTagConfig) {
     config = { // load the config
       title: 'MinifyAllWeb minify CSS, JSON and JS - minifyall.jgracia.es',
-      description: 'Online code minifier for CSS, JSON, JSONC and JavaScript. Minify instantly your programming code simple, smooth and fast!',
+      description:
+        'Online code minifier for CSS, JSON, JSONC and JavaScript. Minify instantly your programming code simple, smooth and fast!',
       slug: '',
       ...config
     };
@@ -25,7 +26,7 @@ export class SeoService {
     this.meta.updateTag({name: 'twitter:description', content: config.description});
     this.meta.updateTag({property: 'og:title', content: config.title});
     this.meta.updateTag({property: 'og:description', content: config.description});
-    this.meta.updateTag({property: 'og:url', content: environment.url+config.slug});
+    this.meta.updateTag({property: 'og:url', content: environment.url + config.slug});
   }
 }
 

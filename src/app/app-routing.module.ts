@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
-import {HomeMinifier} from './components/home-minifier/home-minifier.component';
+import {HomeMinifierComponent} from './components/home-minifier/home-minifier.component';
 
 /**
  * all routes of which the application is composed by.
  */
 export const routes: Routes = [
-  {path: '', component: HomeMinifier},
+  {path: '', component: HomeMinifierComponent},
   {
     path: 'info',
     loadChildren: () => import('./components/information/information.module').then(m => m.InformationModule)
