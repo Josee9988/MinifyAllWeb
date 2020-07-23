@@ -78,7 +78,7 @@
 
   <!-- Submit button -->
   <div class="full-width hvr-hang">
-    <button id="submitButton" (click)="onSubmit()" class="full-width" color="primary" mat-raised-button
+    <button (click)="onSubmit()" class="full-width" color="primary" id="submitButton" mat-raised-button
             matTooltip="Minify your code"><em class="fas fa-compress-alt"></em>
       Minify {{getLanguageFromSelected().value !== 0 ? getLanguageFromSelected().viewValue : ''}} code
     </button>

@@ -1,5 +1,5 @@
 import {Injectable, NgZone} from '@angular/core';
-import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+import {MatSnackBar, MatSnackBarConfig} from '@angular/material/snack-bar';
 import {SnackbarTypeEnum} from '../enums/Snackbar-type.enum';
 
 @Injectable({

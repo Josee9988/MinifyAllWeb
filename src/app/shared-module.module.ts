@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {SanitizeHtmlPipe} from "./shared/pipes/sanitize-html.pipe";
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {SanitizeHtmlPipe} from './shared/pipes/sanitize-html.pipe';
 
 @NgModule({
   declarations: [SanitizeHtmlPipe],
@@ -11,4 +11,5 @@ import {SanitizeHtmlPipe} from "./shared/pipes/sanitize-html.pipe";
     SanitizeHtmlPipe
   ]
 })
-export class SharedModuleModule { }
+export class SharedModuleModule {
+}

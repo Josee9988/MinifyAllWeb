@@ -3,22 +3,22 @@ import 'zone.js/dist/zone-node';
 import {ngExpressEngine} from '@nguniversal/express-engine';
 import * as express from 'express';
 import {join} from 'path';
-(global as any).WebSocket = require('ws');
-(global as any).XMLHttpRequest = require('xhr2');
-
 import {AppServerModule} from './src/main.server';
 import {APP_BASE_HREF} from '@angular/common';
 import {existsSync} from 'fs';
-import 'localstorage-polyfill'
+import 'localstorage-polyfill';
 
-global['localStorage'] = localStorage;
+(global as any).WebSocket = require('ws');
+(global as any).XMLHttpRequest = require('xhr2');
+
+global.localStorage = localStorage;
 
 
 const MockBrowser = require('mock-browser').mocks.MockBrowser;
 const mock = new MockBrowser();
 
-global['document'] = mock.getDocument();
-global['window'] = mock.getWindow();
+global.document = mock.getDocument();
+global.window = mock.getWindow();
 
 Object.defineProperty(document.body.style, 'transform', {
   value: () => {

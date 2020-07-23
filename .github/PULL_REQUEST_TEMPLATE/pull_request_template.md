@@ -28,4 +28,4 @@ Please delete options that are not relevant.
 - [ ] I have commented my code, particularly in hard-to-understand areas.
 - [ ] I have made corresponding changes to the documentation.
 - [ ] My changes generate no new warnings or errors.
-- [ ] New (if you add any feature you should add tests to prove that your feature is works) and existing unit tests pass locally with my changes (*test/*).
+- [ ] New (if you add any feature you should add tests to prove that your feature works) and existing unit tests pass locally with my changes (*test/*).

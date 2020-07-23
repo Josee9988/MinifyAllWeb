@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD024-->
 # **Change Log** 📜📝
 
 All notable changes to the "**MinifyAll online**" tool will be documented in this file.
@@ -11,6 +12,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 ### Fixed
 
 * Fixed multiple JSON problems by updating the MinifyAllCLi to 1.1.5.
+
+### Added
+
+* Github workflow action using Github super-linter and angular linter to lint all the project.
+
+### Fixed
+
+* HomeMinifier test that wasn't working.
+* Fixed all the angular linting errors.
+
+### Changed
+
+* Reformatted the code.
 
 ## [**1.6.2**] - 2020-06-15
 
@@ -158,7 +172,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ### Changed
 
-* Link to buy me a coffee from PayPal to https://www.buymeacoffee.com/josee9988
+* Link to buy me a coffee from PayPal to <https://www.buymeacoffee.com/josee9988>
 
 ### Removed
 
