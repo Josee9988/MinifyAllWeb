@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.6.3**] - 2020-07-23
+
+### Fixed
+
+* Fixed multiple JSON problems by updating the MinifyAllCLi to 1.1.5.
+
 ## [**1.6.2**] - 2020-06-15
 
 ### Fixed
