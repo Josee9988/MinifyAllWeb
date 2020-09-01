@@ -7,6 +7,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.6.4**] - 2020-08-31
+
+### Fixed
+
+* MinifyAllCli fix by updating the package to its newest version (1.1.7).
+
 ## [**1.6.3**] - 2020-07-23
 
 ### Fixed
