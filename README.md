@@ -8,7 +8,7 @@ Check the **original** VSCode extension **[MinifyAll](https://github.com/Josee99
 
 Do you want to improve the project or did you find a bug? **[let us know](https://github.com/Josee9988/MinifyAllWeb/issues)**.
 
-> We support up to **4** languages!
+> We support up to **5** languages!
 
 ---
 
@@ -17,6 +17,7 @@ Do you want to improve the project or did you find a bug? **[let us know](https:
 - **HTML**
 - **CSS**
 - **JSON**
+- **JSONC**
 - **JavaScript** with [Terser](https://github.com/terser/terser)
 
 ---
