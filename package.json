@@ -1,7 +1,7 @@
 {
   "name": "minifyallweb",
   "description": "Online code minifier for HTML, CSS, JSON and JS",
-  "version": "1.6.4",
+  "version": "1.6.5",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -58,7 +58,7 @@
     "@angular/platform-server": "^9.1.12",
     "@angular/router": "^9.1.12",
     "@angular/service-worker": "^9.1.12",
-    "@josee9988/minifyall": "^1.1.7",
+    "@josee9988/minifyall": "^1.1.8",
     "@nguniversal/express-engine": "^9.1.1",
     "@types/marked": "^0.7.4",
     "compression": "^1.7.4",
