@@ -7,6 +7,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.6.6**] - 2020-09-02
+
+### Added
+
+* Npm script to automatically deploy to the firebase hosting. (Ignore the firebase hosting error to pay for node versions <8, set the node version to 8 and deploy again without errors).
+
 ## [**1.6.5**] - 2020-09-02
 
 ### Fixed

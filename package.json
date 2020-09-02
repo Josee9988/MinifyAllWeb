@@ -1,7 +1,7 @@
 {
   "name": "minifyallweb",
   "description": "Online code minifier for HTML, CSS, JSON and JS",
-  "version": "1.6.5",
+  "version": "1.6.6",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -12,15 +12,17 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "test:ci": "ng test --browsers ChromeHeadless\n",
+    "test:ci": "ng test --browsers ChromeHeadless",
     "dev:ssr": "ng run MinifyAll:serve-ssr",
     "serve:ssr": "node dist/MinifyAll/server/main.js",
     "build:ssr": "ng build --prod && ng run MinifyAll:server:production",
     "prerender": "ng run MinifyAll:prerender",
-    "firebase:deploy": "ng deploy",
+    "firebase:Fulldeploy": "npm run firebase:build && npm run firebase:setNodeVersionTo8 && firebase deploy",
+    "firebase:build": "ng deploy || exit 0",
     "firebase:deploy:preview": "ng deploy --preview",
     "firebase:deploy:disable": "firebase hosting:disable --project minifyallweb",
-    "webdriver:update": "webdriver-manager clean && webdriver-manager update"
+    "webdriver:update": "webdriver-manager clean && webdriver-manager update",
+    "firebase:setNodeVersionTo8": "cp ./dist/MinifyAll/package.json ./dist/MinifyAll/package.temp.json && node -p \"JSON.stringify({...require('./dist/MinifyAll/package.temp.json'), engines: {node: '8'}}, null, 2)\" > dist/MinifyAll/package.json && rm ./dist/MinifyAll/package.temp.json"
   },
   "author": {
     "name": "Jose Gracia",
