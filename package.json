@@ -17,7 +17,7 @@
     "serve:ssr": "node dist/MinifyAll/server/main.js",
     "build:ssr": "ng build --prod && ng run MinifyAll:server:production",
     "prerender": "ng run MinifyAll:prerender",
-    "firebase:Fulldeploy": "npm run firebase:build && npm run firebase:setNodeVersionTo8 && firebase deploy",
+    "firebase:fullDeploy": "npm run firebase:build && npm run firebase:setNodeVersionTo8 && firebase deploy",
     "firebase:build": "ng deploy || exit 0",
     "firebase:deploy:preview": "ng deploy --preview",
     "firebase:deploy:disable": "firebase hosting:disable --project minifyallweb",
