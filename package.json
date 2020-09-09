@@ -1,7 +1,7 @@
 {
   "name": "minifyallweb",
   "description": "Online code minifier for HTML, CSS, JSON and JS",
-  "version": "1.6.6",
+  "version": "1.6.7",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -22,7 +22,8 @@
     "firebase:deploy:preview": "ng deploy --preview",
     "firebase:deploy:disable": "firebase hosting:disable --project minifyallweb",
     "webdriver:update": "webdriver-manager clean && webdriver-manager update",
-    "firebase:setNodeVersionTo8": "cp ./dist/MinifyAll/package.json ./dist/MinifyAll/package.temp.json && node -p \"JSON.stringify({...require('./dist/MinifyAll/package.temp.json'), engines: {node: '8'}}, null, 2)\" > dist/MinifyAll/package.json && rm ./dist/MinifyAll/package.temp.json"
+    "firebase:setNodeVersionTo8": "cp ./dist/MinifyAll/package.json ./dist/MinifyAll/package.temp.json && node -p \"JSON.stringify({...require('./dist/MinifyAll/package.temp.json'), engines: {node: '8'}}, null, 2)\" > dist/MinifyAll/package.json && rm ./dist/MinifyAll/package.temp.json",
+    "update:minifyallcore": "bash bin/coreUpdater.sh"
   },
   "author": {
     "name": "Jose Gracia",

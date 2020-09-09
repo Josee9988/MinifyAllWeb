@@ -7,6 +7,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.6.7**] - 2020-09-09
+
+### Added
+
+* Command to update minifyallcli core.
+
+### Fixed
+
+* Protractor tests are now working.
+
 ## [**1.6.6**] - 2020-09-02
 
 ### Added
