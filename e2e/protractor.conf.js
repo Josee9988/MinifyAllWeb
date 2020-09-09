@@ -15,12 +15,13 @@ exports.config = {
   capabilities: {
     browserName: 'chrome',
     chromeOptions: { // make chrome headless to allow CI testing to work
-      binary: require('puppeteer').executablePath(),
+      // binary: require('puppeteer').executablePath(),
       args: ['--headless', '--no-sandbox', "--disable-gpu", "--window-size=800x600"]
     }
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
+  // useAllAngular2AppRoots: true,
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
