@@ -7,6 +7,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.6.8**] - 2020-09-21
+
+### Changed
+
+* Updated "terser" to its latest version to close MinifyAll's issue #65.
+
 ## [**1.6.7**] - 2020-09-09
 
 ### Added
