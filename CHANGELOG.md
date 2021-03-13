@@ -7,6 +7,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.6.9**] - 2021-03-13
+
+### Changed
+
+* MinifyAllCli (core) changed by updating the package to its newest version (1.1.11).
+
 ## [**1.6.8**] - 2020-09-21
 
 ### Changed
