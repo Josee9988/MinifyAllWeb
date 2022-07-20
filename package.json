@@ -70,7 +70,7 @@
     "mock-browser": "^0.92.14",
     "mugan86-ng-google-analytics": "^1.1.1",
     "rxjs": "~6.5.5",
-    "terser": "^4.8.0",
+    "terser": "^4.8.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
